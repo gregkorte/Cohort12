@@ -7,23 +7,8 @@ document.addEventListener('DOMContentLoaded', function(){
       var randomReturn = studentList[Math.floor(Math.random() * studentList.length)];
       // var docFragment = createPTag();
       // $target.appendChild(docFragment);
-      //alert(randomReturn);
+      alert(randomReturn);
   });
-
-function selectorMethod(){
-    var $option = document.querySelector("selector").selectedIndex;
-
- 	if ($option === 'random'){
- 	    alert("This is the random list")};
- 		else if ($option === 'neighborPairing'){
- 			alert('This is the neighbor pairing list')};
- 		else if ($option === 'teamsOf3'){
- 			alert('This is the teams of 3 list')};
- 		else if ($option === 'randomPairing'){
- 			alert('This is the random pairing list')};
- 		else if ($option === 'randomNPairing'){
- 			alert('This is the random n pairing list')};
-};
 
 });
 
