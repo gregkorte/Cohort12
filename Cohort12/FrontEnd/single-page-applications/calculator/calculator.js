@@ -62,7 +62,7 @@ function divide(a, b){
   Create a function that accepts three arguments.
     1. First number
     2. Second number
-    3. A function that performs an operation on them
+    3. A function that performs an operation
 
   Return the value of the operation.
  */
