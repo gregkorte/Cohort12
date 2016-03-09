@@ -27,9 +27,19 @@ function palindrome(str) {
 
 var testString = "";
 
-strManipBtn.addEventListener('click', function(){
+function strManip(){
   testString = strInput.value;
   reversal(testString);
   alphabits(testString);
   palindrome(testString);
+}
+
+strManipBtn.addEventListener('click', strManip);
+
+strInput.addEventListener('keyup', function(event){
+  if (event.keyCode === 13){
+    strManip();
+  }
+  return;
 })
+
