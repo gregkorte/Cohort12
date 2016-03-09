@@ -43,3 +43,40 @@ strInput.addEventListener('keyup', function(event){
   return;
 })
 
+// Solar system
+var planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"];
+/*
+ Use the forEach method to add the name of each planet
+ to a div element in your HTML with an id of "planets".
+*/
+function populateSolarSystem(planet){
+  var el = document.getElementById("planets");
+  el.innerHTML += '<div>' + planet + '</div>'
+}
+
+planets.forEach(populateSolarSystem)
+
+// Use the map method to create a new array where the first letter of each planet is capitalized
+planets.map(function(planet){
+  var el = document.getElementById("capPlanets");
+  el.innerHTML += '<div>' + planet.charAt(0).toUpperCase() + planet.slice(1) + '</div>';
+})
+
+// Use the filter method to create a new array that contains planets with the letter 'e'
+planets.filter(function(planet){
+  var el = document.getElementById("filPlanets");
+  if (planet.match(/e/)){
+    el.innerHTML += '<div>' + planet + '</div>'
+  }
+  return;
+})
+
+// Use the reduce method to create a sentence from the words in the following array
+var words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"];
+var el = document.getElementById('worms')
+
+var result = words.reduce(function(prev, curr){
+  return prev + ' ' + curr;
+})
+
+el.innerHTML = result
