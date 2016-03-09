@@ -1,0 +1,28 @@
+.blue {
+  color: blue;
+}
+
+.hulk {
+  font-size: 1.5em;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+.round {
+  border: 1px solid red;
+  border-radius: 4px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.block {
+  display: block;
+}
