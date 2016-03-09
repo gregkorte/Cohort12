@@ -1,4 +1,4 @@
-# Cohort 10 - Nashville Software School
+# Cohort 12 - Nashville Software School
 ___
 
 As a graduate of [NSS Cohort 7](http://cohort7.nashvillesoftwareschool.com/), I am continuing my journey by giving back to the next few cohorts of students, and along the way I am solidifying my knowledge of the technologies I will be using to become truly independent and free.
