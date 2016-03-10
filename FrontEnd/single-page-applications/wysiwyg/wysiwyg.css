@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Rock+Salt);
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter);
+
+body {
+  font-family: "Architects Daughter";
+  text-align: center;
+  background-image: url(background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.yellow {
+  background-color: lightyellow;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+img {
+  max-width: 60%;
+  display: block;
+  margin: 10px auto;
+}
+
+person {
+  color: chocolate;
+  font-family: ;
+  display: inline-block;
+  padding: 20px;
+  margin: 20px 20px;
+  width: 35%;
+  border: 1px solid saddlebrown;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px;
+}
+
+section {
+  text-align: justify;
+  overflow: hidden;
+}
+
+header {
+  color: saddlebrown;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: "Rock Salt";
+  text-align: center;
+}
+
+footer {
+  color: saddlebrown;
+}
+
+input {
+  border-radius: 5px;
+  height: 30px;
+  width: 30%;
+  padding: 0 10px;
+}
+
+.dotted {
+  border: 1px dotted red;
+}
