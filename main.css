@@ -1,0 +1,102 @@
+.navigation {
+  background-color: pink;
+  border: 2px solid grey;
+  padding: 10;
+  padding: 10px;
+  font-size: .8em;
+  width: 60%;
+}
+#topgroup {
+  border: 2px solid black ;
+  margin-right: 400;
+}
+section {
+  border: 1px solid grey;
+}
+
+.container {
+  background-color: pink;
+  height: 50px;
+}
+fieldset {
+  background-color: blue;
+  margin-right: 17em;
+}
+.first {
+  margin: 2em;
+}
+.options {
+  color: light blue;
+  width: 30%;
+  border-radius: 10%;   
+}
+.box {
+  width: 95%;
+  display: flex;
+}
+
+.artist {
+  display: inline-block;
+
+}
+.song {
+  font-size: 20px;
+}
+.firstfirst {
+  display: inline;
+  float: right;
+  font-size: 14px;
+}
+.artist1 {
+  display: inline;
+  font-size: 14px;
+}
+.artist2 {
+  display: inline;
+  font-size: 14px;
+}
+.artist3 {
+  display: block;
+  font-size: 14px;
+}
+.options {
+  display: inline-block;  
+}
+.content1 {
+  font-size: 30px;
+  padding-left: 10 px;
+  text-indent: 2em;
+  float: left;
+}
+.para {
+  padding-left: 15 px;
+  display: inline;
+}
+.content2 {
+  text-indent: 2em;
+  float: left;
+}
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+.box{
+    float:right;
+    width:40%;
+    height:210px;
+    background-color: yellow;
+    border:1px solid grey;
+    margin-right: 32em;
+    display: block;
+    overflow: auto;
+}
+.options {
+  float: left;
+  width: 300px;
+  margin: 10px;
+}
+.box {
+  float: left;
+  width: 620px;
+  margin: 10px;
+}
