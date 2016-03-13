@@ -4,11 +4,11 @@
   padding: 10;
   padding: 10px;
   font-size: .8em;
-  width: 60%;
+  width: 700px;
 }
 #topgroup {
   border: 2px solid black ;
-  margin-right: 400;
+  margin-right: 300px;
 }
 section {
   border: 1px solid grey;
@@ -20,7 +20,7 @@ section {
 }
 fieldset {
   background-color: blue;
-  margin-right: 17em;
+  margin-right: 0;
 }
 .first {
   margin: 2em;
@@ -77,18 +77,20 @@ fieldset {
   float: left;
 }
 #wrap{
-    width: 100%;
+    width: 400px;
     margin: 0 auto;
+    dsplay: block;
 }
-.box{
+#box{
     float:right;
-    width:40%;
+    width:400px;
     height:210px;
     background-color: yellow;
     border:1px solid grey;
-    margin-right: 32em;
+    margin-right: 87em;
     display: block;
     overflow: auto;
+    padding-top: 1em;
 }
 .options {
   float: left;
@@ -100,3 +102,6 @@ fieldset {
   width: 620px;
   margin: 10px;
 }
+/*input {
+  display: block;
+}*/
