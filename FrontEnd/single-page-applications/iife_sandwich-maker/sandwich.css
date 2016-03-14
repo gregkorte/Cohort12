@@ -1,0 +1,52 @@
+#breadWrap {
+  background-image: url(img/bg-bread.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#meatWrap {
+  background-image: url(img/bg-meat.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#cheeseWrap {
+  background-image: url(img/bg-cheese.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#condimentWrap {
+  background-image: url(img/bg-condiment.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#veggieWrap {
+  background-image: url(img/bg-veggie.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+fieldset {
+  margin: 10px;
+}
+
+fieldset, select, option {
+  border-radius: 5px;
+}
+
+legend {
+  font-weight: bold;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  border-top: solid #6C6C6C 1px;
+  border-left: solid #6C6C6C 1px;
+  border-right: solid #6C6C6C 1px;
+}
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IIFE Sandwich Maker</title>
+  <link rel="stylesheet" href="sandwich.css">
+</head>
+<body>
+  <h1>IIFE Sandwich Maker</h1>
+  <div id="output-price"></div>
+  <fieldset id="breadWrap">
+    <legend>Getcho Bread</legend>
+    <select name="bread" id="bread">
+      <option value="nobread" selected>None</option>
+      <option value="white">White</option>
+      <option value="wheat">Wheat</option>
+      <option value="rye">Rye</option>
+      <option value="pumpernickel">Pumpernickel</option>
+    </select>
+  </fieldset>
+  <fieldset id="meatWrap">
+    <legend>Getcho MeAt</legend>
+  <select name="meat" id="meat">
+    <option value="nomeat">None</option>
+    <option value="ham">Ham</option>
+    <option value="roastbeef">Roast Beef</option>
+    <option value="turkey">Turkey</option>
+    <option value="bacon">Bacon</option>
+  </select>
+  </fieldset>
+  <fieldset id="cheeseWrap">
+    <legend>Getcho Cheeze</legend>
+  <select name="cheese" id="cheese">
+    <option value="nocheese">None</option>
+    <option value="american">American</option>
+    <option value="provolone">Provolone</option>
+    <option value="swiss">Swiss</option>
+    <option value="cheddar">Cheddar</option>
+  </select>
+  </fieldset>
+  <fieldset id="condimentWrap">
+    <legend>Getcho Sauces</legend>
+  <select name="condiments" id="condiments">
+    <option value="nocondiments">None</option>
+    <option value="mayo">Mayo</option>
+    <option value="mustard">Mustard</option>
+    <option value="vinegar">Vinegar</option>
+    <option value="ranch">Ranch</option>
+  </select>
+  </fieldset>
+  <fieldset id="veggieWrap">
+    <legend>Getcho Veg</legend>
+  <select name="veggies" id="veggies">
+    <option value="noveggies">None</option>
+    <option value="lettuce">Lettuce</option>
+    <option value="tomato">Tomato</option>
+    <option value="onion">Onion</option>
+    <option value="spinach">Spinach</option>
+  </select>
+  </fieldset>
+  <div id="output-order"></div>
+  <!-- <script src="sandwich.js"></script> -->
+  <script src="scripts/SandwichMaker.js"></script>
+  <script src="scripts/bread.js"></script>
+  <script src="scripts/meat.js"></script>
+  <script src="scripts/cheese.js"></script>
+  <script src="scripts/veggies.js"></script>
+  <script src="scripts/condiments.js"></script>
+  <script src="scripts/domHandler.js"></script>
+</body>
+</html>
