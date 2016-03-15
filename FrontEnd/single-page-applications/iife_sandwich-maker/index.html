@@ -6,7 +6,9 @@
   <link rel="stylesheet" href="sandwich.css">
 </head>
 <body>
-  <h1>IIFE Sandwich Maker</h1>
+  <div id="header">
+    <h1>IIFE Sandwich Maker</h1>
+  </div>
   <div id="output-price"></div>
   <fieldset id="breadWrap">
     <legend>Getcho Bread</legend>
@@ -23,7 +25,7 @@
   <select name="meat" id="meat">
     <option value="nomeat">None</option>
     <option value="ham">Ham</option>
-    <option value="roastbeef">Roast Beef</option>
+    <option value="roast beef">Roast Beef</option>
     <option value="turkey">Turkey</option>
     <option value="bacon">Bacon</option>
   </select>
@@ -58,8 +60,18 @@
     <option value="spinach">Spinach</option>
   </select>
   </fieldset>
+  <div>
+    <div id="order">
+      <label>Place Order</label>
+      <input type="button" id="orderBtn">
+    </div>
+    <div id="clear">
+      <label>Clear Order</label>
+      <input type="button" id="clearBtn">
+    </div>
+  </div>
   <div id="output-order"></div>
-  <!-- <script src="sandwich.js"></script> -->
+
   <script src="scripts/SandwichMaker.js"></script>
   <script src="scripts/bread.js"></script>
   <script src="scripts/meat.js"></script>

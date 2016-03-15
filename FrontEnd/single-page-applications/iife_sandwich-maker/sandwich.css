@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Chalk';
+  src: url('fonts/chalk.ttf');
+}
+
 #breadWrap {
   background-image: url(img/bg-bread.png);
   background-size: cover;
@@ -50,3 +55,68 @@ legend {
   border-right: solid #6C6C6C 1px;
 }
 
+#order, #clear{
+  display: inline-block;
+  margin: 10px;
+}
+
+label, input {
+  display: block;
+}
+
+input[type="button"]{
+  margin: 0 auto;
+  height: 40px;
+  width: 40px;
+  border: solid #6C6C6C 2px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input:focus{
+  outline: none;
+}
+
+#orderBtn{
+  background-image: radial-gradient(circle at top, #eaffe7 0%,#009900 50%,#53df2d 100%);
+}
+
+#orderBtn:hover{
+  background-image: radial-gradient(circle at top, #eaffe7 0%,#00cc33 50%,#53df2d 100%);
+}
+
+#clearBtn{
+  background-image: radial-gradient(circle at top, #eaffe7 0%,#cc0000 50%,#df452d 100%);
+}
+
+#clearBtn:hover{
+  background-image: radial-gradient(circle at top, #eaffe7 0%,#ff3300 50%,#df452d 100%);
+}
+
+#header{
+  display: inline-block;
+  width: 70%;
+}
+
+#output-price{
+  display: inline-block;
+  font-weight: bold;
+  text-align: right;
+  width: 25%;
+}
+
+#output-order{
+  margin: 20px;
+}
+
+/* ADD SLIDE DOWN BOUCE EFFECT */
+.chalkboard{
+  font-family: "Chalk";
+  font-size: 2em;
+  text-align: justify;
+  color: white;
+  padding: 20px;
+  border: 60px;
+  border-image: url(img/border.png) 65 65 stretch;
+  background-color: #212025;
+}
