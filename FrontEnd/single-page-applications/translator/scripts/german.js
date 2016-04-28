@@ -1,6 +1,6 @@
 "use-strict"
 
-var Translator = (function(){
+var Translator = (function(language){
  let lexicon = {
     "merry": "fröhlich",
     "christmas": "Weihnachten",
@@ -31,9 +31,11 @@ var Translator = (function(){
     "with": "mit"
  }
 
-.translateToGaelic = function(input){
+language.translateToGaelic = function(input){
 
 }
+
+return language;
 
 
 })(Translator || {});
