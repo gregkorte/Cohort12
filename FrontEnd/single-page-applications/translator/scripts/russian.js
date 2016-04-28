@@ -1,6 +1,7 @@
 "use-strict";
 
 var Translator = (function(language){
+
  let lexicon = {
     merry: "веселый",
     christmas: "рождество",
@@ -31,8 +32,8 @@ var Translator = (function(language){
     with: "с"
  };
 
-language.translateToGaelic = function(input){
-
+language.translateToRussian = function(input){
+    console.log(input);
 }
 
 return language;

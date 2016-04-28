@@ -1,6 +1,7 @@
 "use-strict";
 
 var Translator = (function(language){
+
  var lexicon = {
     merry: "merry",
     christmas: "nolliag",
@@ -32,7 +33,7 @@ var Translator = (function(language){
  };
 
 language.translateToGaelic = function(input){
- console.log(lexicon);
+ console.log(input);
 }
 
 return language;
