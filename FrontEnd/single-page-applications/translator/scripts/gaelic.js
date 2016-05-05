@@ -1,8 +1,9 @@
 "use-strict";
 
 var Translator = (function(language){
+  var output = document.getElementById('output');
 
- var lexicon = {
+  var lexicon = {
     merry: "merry",
     christmas: "nolliag",
     and: "agus",
@@ -30,10 +31,19 @@ var Translator = (function(language){
     force: "feachd",
     be: "a bhith",
     with: "le"
- };
+  };
 
-language.translateToGaelic = function(input){
- console.log(input);
+  language.translateToGaelic = function(input){
+  input.forEach(function(element){
+    var dictionary = Object.keys(lexicon);
+    for (var i in dictionary){
+        if (element === dictionary[i]){
+            output.innerHTML += lexicon[element] + " ";
+        }
+    }
+  })
+  output.innerHTML += "!";
+  input = '';
 }
 
 return language;

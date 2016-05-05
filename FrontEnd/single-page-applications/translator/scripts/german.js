@@ -33,7 +33,16 @@ var Translator = (function(language){
  };
 
 language.translateToGerman = function(input){
-    console.log(input);
+  input.forEach(function(element){
+    var dictionary = Object.keys(lexicon);
+    for (var i in dictionary){
+      if (element === dictionary[i]){
+        output.innerHTML += lexicon[element] + " ";
+      }
+    }
+  })
+  output.innerHTML += "!";
+  input = '';
 }
 
 return language;

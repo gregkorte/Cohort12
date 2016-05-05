@@ -2,7 +2,7 @@
 
 var Translator = (function(language){
 
- let lexicon = {
+  let lexicon = {
     merry: "веселый",
     christmas: "рождество",
     and: "а также",
@@ -30,10 +30,19 @@ var Translator = (function(language){
     force: "сила",
     be: "быть",
     with: "с"
- };
+  };
 
 language.translateToRussian = function(input){
-    console.log(input);
+  input.forEach(function(element){
+    var dictionary = Object.keys(lexicon);
+    for (var i in dictionary){
+      if (element === dictionary[i]){
+        output.innerHTML += lexicon[element] + " ";
+      }
+    }
+  })
+  output.innerHTML += "!";
+  input = '';
 }
 
 return language;
