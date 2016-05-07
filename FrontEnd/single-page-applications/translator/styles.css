@@ -1,11 +1,25 @@
+body {
+  margin: 0 auto;
+  padding: 20px;
+  width: 80%;
+  height: 70%;
+}
+
 #nav {
   height: 30px;
   margin: 10px;
 }
 
+select {
+  border-radius: 3px;
+  padding: 3px;
+}
+
 #output {
-  border: black 1px solid;
+  border: black 2px solid;
   border-radius: 5px;
   padding: 20px;
   margin: 10px;
+  text-align: center justify;
+  font-size: 1.7em;
 }

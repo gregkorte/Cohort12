@@ -41,6 +41,8 @@ language.translateToGerman = function(input){
       }
     }
   })
+  var lang = 'german';
+  Translator.speak(lang);
   output.innerHTML += "!";
   input = '';
 }

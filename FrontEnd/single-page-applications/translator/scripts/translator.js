@@ -23,5 +23,5 @@ function filterLanguage(selection){
 button.addEventListener('click', function(){
   output.innerHTML = '';
   var translate = filterLanguage(select.value);
-  translate(result.value.split(' '));
+  translate(result.value.toLowerCase().split(' '));
 });

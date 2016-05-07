@@ -42,6 +42,8 @@ var Translator = (function(language){
         }
     }
   })
+  var lang = 'gaelic';
+  Translator.speak(lang);
   output.innerHTML += "!";
   input = '';
 }

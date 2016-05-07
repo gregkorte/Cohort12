@@ -41,6 +41,8 @@ language.translateToRussian = function(input){
       }
     }
   })
+  var lang = 'russian';
+  Translator.speak(lang);
   output.innerHTML += "!";
   input = '';
 }
