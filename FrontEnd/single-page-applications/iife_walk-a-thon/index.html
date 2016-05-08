@@ -7,13 +7,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <h1>Walk-A-Thon Donation Form</h1>
   <form>
-    <input type="text">name
-    <input type="text">email
-    <input type="text">donation
-    <input type="text">lump or per
-    <input type="button">Donate
-    <input type="button">Cancel
+    <input id='name' type="text" placeholder='Enter Name'>
+    <input id='email' type="text" placeholder='Enter Email'>
+    <input id='pledge' type="text" placeholder='Enter Pledge'>
+    <input class='type' type="checkbox" name='pledge-type' value='lump-sum'>lump sum
+    <input class='type' type="checkbox" name='pledge-type' value='per-lap'>per lap
+    <input id='btn-submit' type="button" value='Donate'>
+    <input id='btn-cancel' type="button" value='Cancel'>
   </form>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
   <script src='scripts/donors.js'></script>

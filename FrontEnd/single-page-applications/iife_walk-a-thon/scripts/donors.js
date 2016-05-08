@@ -15,4 +15,4 @@ var Walkathon = (function(walk){
   }
 
   return walk;
-})()
+})(Walkathon || {});
