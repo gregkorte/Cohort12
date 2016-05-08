@@ -10,8 +10,9 @@ var Walkathon = (function(walk){
     return donors;
   }
 
-  walk.addDonor() = function(){
-
+  walk.addDonor = function(donor){
+    console.log('addDonor running')
+    console.log(donor);
   }
 
   return walk;
