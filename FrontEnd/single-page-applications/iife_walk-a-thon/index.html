@@ -9,16 +9,30 @@
 <body>
   <h1>Walk-A-Thon Donation Form</h1>
   <form>
-    <input id='name' type="text" placeholder='Enter Name'>
-    <input id='email' type="text" placeholder='Enter Email'>
-    <input id='pledge' type="text" placeholder='Enter Pledge'>
-    <input class='type' type="radio" name='pledge-type' value='lump-sum'>lump sum
-    <input class='type' type="radio" name='pledge-type' value='per-lap'>per lap
-    <input id='btn-submit' type="button" value='Donate'>
-    <input id='btn-cancel' type="button" value='Cancel'>
+    <div class='form group'>
+      <input id='name' class='form-control' type='text' placeholder='Enter Name'>
+      <input id='email' class='form-control' type='text' placeholder='Enter Email'>
+    </div>
+      <div class='form group'>
+        <div class='input-group'>
+          <div class="input-group-addon">$</div>
+          <input id='pledge' class='form-control' type='number' placeholder='Enter Pledge'>
+          <div class='input-group-addon'>.00</div>
+        </div>
+        <div class='radio'>
+          <label>
+            <input class='type' type='radio' name='pledge-type' value='lump-sum'>Lump Sum
+          </label>
+          <label>
+            <input class='type' type='radio' name='pledge-type' value='per-lap'>Per Lap
+          </label>
+        </div>
+      </div>
+    <input id='btn-submit' class='btn btn-default' type='button' value='Donate'>
+    <input id='btn-cancel' class='btn btn-default' type='button' value='Cancel'>
   </form>
   <div id='output'></div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
   <script src='scripts/donors.js'></script>
   <script src='scripts/dom.js'></script>
