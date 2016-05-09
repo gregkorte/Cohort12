@@ -58,7 +58,7 @@ var Walkathon = (function(walk){
     for (var i = 0; i < donorInfo.length; i++){
       domString += `<tr><td>${donorInfo[i].name}</td>`
       domString += `<td>${donorInfo[i].email}</td>`
-      domString += `<td>${donorInfo[i].pledge}</td>`
+      domString += `<td>\$${donorInfo[i].pledge}.00</td>`
       if (donorInfo[i].type === 'lump-sum'){
         domString += `<td>Lump sum</td>`
       } else if (donorInfo[i].type === 'per-lap'){

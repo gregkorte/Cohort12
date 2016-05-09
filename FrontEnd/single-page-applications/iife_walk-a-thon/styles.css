@@ -1,6 +1,9 @@
 body {
   margin: 0 auto;
   padding: 20px;
+  background-image: url(img/walk.jpg);
+  background-repeat: no-repeat;
+  background-size: auto auto;
 }
 
 #inputForm {
@@ -13,4 +16,10 @@ body {
 
 .form {
   margin: 10px;
+}
+
+h1 {
+  color: #ff9900;
+  text-shadow: 2px 2px #000;
+  font-weight: 600;
 }
