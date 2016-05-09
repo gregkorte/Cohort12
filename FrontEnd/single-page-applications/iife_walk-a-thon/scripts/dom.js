@@ -19,6 +19,7 @@ var Walkathon = (function(walk){
     donor.type = checkRadioState();
     Walkathon.addDonor(donor);
     clearInputs();
+    sendToDom();
   }
 
   function checkInputs(){
@@ -38,21 +39,34 @@ var Walkathon = (function(walk){
     pledge.value = '';
   }
 
-  function sendToDom(){
-    let donorInfo = Walkathon.getDonors();
-    for (var i = 0; i < donorInfo.length; i++){
-      output.innerHTML += `<div>${donorInfo[i].name}</div>`
-      output.innerHTML += `<div>${donorInfo[i].email}</div>`
-      output.innerHTML += `<div>${donorInfo[i].pledge}</div>`
-    }
-  }
-
   function checkRadioState(){
     for (var i = 0; i < type.length; i++){
       if (type[i].checked){
         return type[i].value;
       }
     }
+  }
+
+  function sendToDom(){
+    domString = `<table class='table table-striped'>`;
+    domString += `<thead><tr>`
+    domString += `<th>Name</th><th>Email</th><th>Pledge Amt</th><th>Type</th>`
+    domString += `</tr></thead><tbody>`
+
+    let donorInfo = Walkathon.getDonors();
+    console.log(donorInfo);
+    for (var i = 0; i < donorInfo.length; i++){
+      domString += `<tr><td>${donorInfo[i].name}</td>`
+      domString += `<td>${donorInfo[i].email}</td>`
+      domString += `<td>${donorInfo[i].pledge}</td>`
+      if (donorInfo[i].type === 'lump-sum'){
+        domString += `<td>Lump sum</td>`
+      } else if (donorInfo[i].type === 'per-lap'){
+        domString += `<td>Per Lap</td></tr>`
+      }
+    }
+    domString += `</tbody></table>`
+    output.innerHTML = domString;
   }
 
   submit.addEventListener('click', checkInputs);

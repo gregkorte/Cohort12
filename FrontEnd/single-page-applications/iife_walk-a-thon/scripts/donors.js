@@ -9,7 +9,6 @@ var Walkathon = (function(walk){
 
   walk.addDonor = function(donor){
     donors.push(donor);
-    console.log(donor)
   }
 
   return walk;
