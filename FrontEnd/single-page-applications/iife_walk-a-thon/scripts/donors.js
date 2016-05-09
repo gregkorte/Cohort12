@@ -1,18 +1,15 @@
 'use-strict';
 
 var Walkathon = (function(walk){
-  let donors = {
-    name: 'John Donut',
-    pledge: 70
-  }
+  let donors = [];
 
   walk.getDonors = function(){
     return donors;
   }
 
   walk.addDonor = function(donor){
-    console.log('addDonor running')
-    console.log(donor);
+    donors.push(donor);
+    console.log(donor)
   }
 
   return walk;
