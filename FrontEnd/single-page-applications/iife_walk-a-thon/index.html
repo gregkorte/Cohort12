@@ -7,31 +7,38 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Walk-A-Thon Donation Form</h1>
-  <form>
-    <div class='form group'>
-      <input id='name' class='form-control' type='text' placeholder='Enter Name'>
-      <input id='email' class='form-control' type='text' placeholder='Enter Email'>
-    </div>
-      <div class='form group'>
-        <div class='input-group'>
-          <div class="input-group-addon">$</div>
-          <input id='pledge' class='form-control' type='number' placeholder='Enter Pledge'>
-          <div class='input-group-addon'>.00</div>
+  <div class='container-fluid'>
+    <h1>Walk-A-Thon Donation Form</h1>
+    <div class='row-fluid'>
+    <div id='output' class='col-sm-8'></div>
+      <form id='inputForm' class='col-sm-4'>
+        <div class='form-group'>
+          <input id='name' class='form-control' type='text' placeholder='Enter Name'>
         </div>
-        <div class='radio'>
-          <label>
-            <input class='type' type='radio' name='pledge-type' value='lump-sum'>Lump Sum
-          </label>
-          <label>
-            <input class='type' type='radio' name='pledge-type' value='per-lap'>Per Lap
-          </label>
+        <div class='form-group'>
+          <input id='email' class='form-control' type='text' placeholder='Enter Email'>
         </div>
-      </div>
-    <input id='btn-submit' class='btn btn-default' type='button' value='Donate'>
-    <input id='btn-cancel' class='btn btn-default' type='button' value='Cancel'>
-  </form>
-  <div id='output'></div>
+        <div class='form-group'>
+          <div class='input-group'>
+            <div class="input-group-addon">$</div>
+            <input id='pledge' class='form-control' type='number' placeholder='Pledge Amt'>
+            <div class='input-group-addon'>.00</div>
+          </div>
+          <div class='radio'>
+            <label>
+              <input class='type' type='radio' name='pledge-type' value='lump-sum'>Lump Sum
+            </label>
+            <label>
+              <input class='type' type='radio' name='pledge-type' value='per-lap'>Per Lap
+            </label>
+          </div>
+        </div>
+        <div class='form-group'>
+          <input id='btn-submit' class='btn btn-default' type='button' value='Donate'>
+          <input id='btn-cancel' class='btn btn-default' type='button' value='Cancel'>
+        </div>
+    </form>
+  </div>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
   <script src='scripts/donors.js'></script>
