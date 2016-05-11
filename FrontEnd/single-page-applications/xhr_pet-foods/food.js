@@ -32,13 +32,10 @@ function getFoods(){
 }
 
 function buildCatTable(food){
-  console.log("cats running");
-
-  domString += `<table class="table table-striped">`
-  domString += `<tr><thead><th>Product</th>`
-  domString += `<th>Breeds</th>`
-  domString += `<th>Types</th>`
-  domString += `<th>Weight/Price</th></tr></thead>`
+  domString += `<h3>Cat Food Brands</h3>
+  <table class="table table-bordered table-striped">
+  <tr><thead><th>Product</th><th>Breeds</th><th>Types</th>
+  <th>Weight</th><th>Price</th></tr></thead>`
 
   for (var a = 0; a < food.length; a++){
     var name = food[a].name;
@@ -49,9 +46,8 @@ function buildCatTable(food){
         var volumes = types[c].volumes;
         for (var d = 0; d < volumes.length; d++){
           domString += `<tr><td>${food[a].name}</td>
-          <td>${breeds[b]}</td>
-          <td>${types[c].type}</td>
-          <td>${volumes[d].name}: ${volumes[d].price}</td></tr>`;
+          <td>${breeds[b]}</td><td>${types[c].type}</td>
+          <td>${volumes[d].name}</td><td>\$${volumes[d].price}</td></tr>`;
         }
       }
     }
@@ -61,11 +57,10 @@ function buildCatTable(food){
 }
 
 function buildDogTable(food){
-  console.log("dogs running");
-  domString += `<table class="table table-striped">`
-  domString += `<tr><thead><th>Product</th>`
-  domString += `<th>Types</th>`
-  domString += `<th>Weight/Price</th></tr></thead>`
+  domString += `<h3>Dog Food Brands</h3>
+  <table class="table table-bordered table-striped">
+  <tr><thead><th>Product</th><th>Types</th><th>Weight</th>
+  <th>Price</th></tr></thead>`
 
   for (var a = 0; a < food.length; a++){
     var name = food[a].name;
@@ -74,8 +69,8 @@ function buildDogTable(food){
       var volumes = types[c].volumes;
       for (var d = 0; d < volumes.length; d++){
         domString += `<tr><td>${food[a].name}</td>
-        <td>${types[c].type}</td>
-        <td>${volumes[d].name}: ${volumes[d].price}</td></tr>`;
+        <td>${types[c].type}</td><td>${volumes[d].name}</td>
+        <td>\$${volumes[d].price}</td></tr>`;
       }
     }
   }
@@ -84,7 +79,6 @@ function buildDogTable(food){
 }
 
 function writeToDom(string){
-  console.log(string);
   output.innerHTML = string;
 }
 
