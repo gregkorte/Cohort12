@@ -47,6 +47,7 @@ let input = document.getElementById('input');
 let card = document.getElementsByClassName('card');
 let bio = document.getElementsByClassName('bio');
 
+// ... Loads cards to the DOM ... //
 function loadDom(){
   for (let i = 0; i < people.length; i++){
     let person = people[i];
@@ -56,6 +57,7 @@ function loadDom(){
   loadClickEvents();
 }
 
+// ... Sets background on cards ... //
 function getBackground(i){
   if (i % 2 === 0){
     card[i].classList.add('yellow');
@@ -65,6 +67,7 @@ function getBackground(i){
   return;
 }
 
+// ... Loads click events ... //
 function loadClickEvents(){
   for (let i = 0; i < card.length; i++){
     let currCard = card[i];
@@ -100,4 +103,5 @@ function removeSelected(){
   }
 }
 
+// ... Call loadDom ... //
 loadDom();
