@@ -131,4 +131,5 @@ orderBtn.addEventListener('click', function(){
     }
   }
   output.innerHTML = `<div>Your order is confirmed for a ${meats} sandwich on ${bread} bread with ${cheeses} cheese, ${veggies}, ${condiments}. Your total is $${SandwichMaker.getTotal()}.<div>Thanks for your order!</div>`
+
 })
