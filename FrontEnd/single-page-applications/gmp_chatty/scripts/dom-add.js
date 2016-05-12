@@ -2,7 +2,7 @@ var Chatty = (function(chat){
   var currMessage = [];
 
   chat.addMessage = function(id, message){
-    console.log('addMessage running');
+    console.log('addMessage running', id, message);
   }
 
   chat.deleteMessage = function(id){
