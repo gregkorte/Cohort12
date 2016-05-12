@@ -7,8 +7,14 @@
 <body>
   <div id='navBar'>
     <div id='logo'>Chatty</div>
-    <input type="text" id='input' placeholder='Add Message'>
-    <input type="button" id='submitBtn' value='Submit'>
+    <input type='text' id='input' placeholder='Add Message'>
+    <input type='button' id='clearBtn' value='Clear Message Board'>
+    <input type='checkbox' id='darkTheme'>Dark Theme
+    <input type='checkbox' id='largeText'>Large Text
+  </div>
+  <div id='messageContainer'>
+    <h3>Messages:</h3>
+    <div id='messageBoard'></div>
   </div>
 
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>

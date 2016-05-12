@@ -10,7 +10,11 @@ var Chatty = (function(chat){
   }
 
   chat.readAllMessages = function(){
-    console.log('readAllMessages running')
+    console.log('readAllMessages running');
+  }
+
+  chat.clearMessages = function(){
+    console.log('clearMessges running');
   }
 
   return chat;
