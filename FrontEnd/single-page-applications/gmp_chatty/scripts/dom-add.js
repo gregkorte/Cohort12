@@ -13,9 +13,5 @@ var Chatty = (function(chat){
     console.log('readAllMessages running');
   }
 
-  chat.clearMessages = function(){
-    console.log('clearMessges running');
-  }
-
   return chat;
 })(Chatty || {});
