@@ -13,11 +13,14 @@ var Chatty = (function(chat){
   }
 
   chat.readAllMessages = function(messages){
+    board.append(`<div class='container'>`)
     for (var i = 0; i < messages.length; i++){
       for (var id in messages[i]){
-        board.append(`<div>${messages[i][id]}</div>`);
+        board.append(`<div id='message${i}' class='row'>${messages[i][id]}<input class='deleteBtn' type='button' value='Delete'></div>`);
       }
     }
+    board.append(`</div>`)
+    Chatty.loadDynamicEvents();
   }
 
   return chat;

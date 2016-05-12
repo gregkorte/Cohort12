@@ -27,5 +27,13 @@ var Chatty = (function(chat){
     board.toggleClass('large');
   })
 
+  chat.loadDynamicEvents = function(){
+    var del = $('.deleteBtn');
+    del.click(function(event){
+      var target = event.currentTarget.closest('div');
+      Chatty.removeFromDom(target);
+    })
+  }
+
   return chat;
 })(Chatty || {});

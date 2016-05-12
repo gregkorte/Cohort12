@@ -2,8 +2,8 @@ var Chatty = (function(chat){
 
   var board = $('#messageBoard');
 
-  chat.removeFromDom = function(id){
-    console.log('removeFromDom running');
+  chat.removeFromDom = function(element){
+    element.remove();
   }
 
   function removeFromArray(id){
