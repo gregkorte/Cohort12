@@ -6,3 +6,9 @@
 .large {
   font-size: 1.7em;
 }
+
+#messageBoard {
+  width: 90%;
+  height: 200px;
+  border: 1px black solid;
+}
