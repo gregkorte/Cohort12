@@ -3,17 +3,16 @@ var Chatty = (function(){
 
   return {
     getMessages: function(){
-      console.log('getMessages running');
       return messages;
     },
     loadMessages: function(){
-      console.log('loadMessages running');
       $.ajax({
           url: "messages.json",
           method: "GET"
         }).done(function(data){
-          data = JSON.parse(data);
-          Chatty.readAllMessages(data.messages);
+          messages = JSON.parse(data).messages;
+          console.log("loadMesssages", messages);
+          Chatty.setInitialStorage(messages);
       });
     }
   }

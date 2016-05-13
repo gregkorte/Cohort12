@@ -13,17 +13,15 @@ var Chatty = (function(chat){
 
   input.keyup(function(event){
     if(event.keyCode === 13){
-      Chatty.addMessage(id, input.val());
+      Chatty.addMessage(input.val(), input.attr('id'));
     }
   })
 
   dark.change(function(){
-    console.log('dark theme initiated');
     board.toggleClass('dark');
   })
 
   large.change(function(){
-    console.log('large text initiated');
     board.toggleClass('large');
   })
 
@@ -31,7 +29,7 @@ var Chatty = (function(chat){
     var del = $('.deleteBtn');
     del.click(function(event){
       var target = event.currentTarget.closest('div');
-      Chatty.removeFromDom(target);
+      Chatty.deleteMessage(target, target.id);
     })
   }
 

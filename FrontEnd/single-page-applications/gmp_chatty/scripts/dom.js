@@ -1,15 +1,17 @@
 'use-strict';
 
 var Chatty = (function(chat){
-  var currMessage = [];
   var board = $('#messageBoard');
 
   chat.addMessage = function(id, message){
-    console.log('addMessage running', id, message);
+    console.log(id, message);
+    Chatty.setStorage(message);
+    board.prepend(`<div id='id' class='row'>${message}<input class='deleteBtn' type='button' value='Delete'></div>`);
   }
 
-  chat.deleteMessage = function(id){
-    console.log('deleteMessages running');
+  chat.deleteMessage = function(element, id){
+    Chatty.setStorage();
+    element.remove();
   }
 
   chat.readAllMessages = function(messages){
@@ -21,6 +23,11 @@ var Chatty = (function(chat){
     }
     board.append(`</div>`)
     Chatty.loadDynamicEvents();
+  }
+
+  chat.clearMessages = function(){
+    Chatty.setStorage();
+    board.html('');
   }
 
   return chat;
