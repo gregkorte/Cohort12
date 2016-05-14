@@ -3,7 +3,6 @@
 var Chatty = (function(chat){
 
   var allMessages = [];
-  var allMessageIds = [];
 
   chat.setStorage = function(messages){
     console.log('setStorage running');
@@ -13,7 +12,6 @@ var Chatty = (function(chat){
         var messageObj = {};
         var objKey = `message${i}`;
         var value = `${messages[i][key]}`;
-        allMessageIds.push(objKey);
         messageObj[objKey] = value;
         allMessages.push(messageObj);
       };
@@ -42,6 +40,10 @@ var Chatty = (function(chat){
     console.log('clearStorage running');
     allMessages = [];
     chat.setStorage(allMessages);
+  }
+
+  chat.getAllMessages = function(){
+    return allMessages;
   }
 
   return chat;

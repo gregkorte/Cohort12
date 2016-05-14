@@ -16,7 +16,12 @@ var Chatty = (function(chat){
     var messageString = '';
     for (var i = 0; i < messages.length; i++){
       for (var id in messages[i]){
-        messageString += `<div id='message${i}' class='row'><div class='message col-xs-10'>${messages[i][id]}</div><div class='col-xs-2'><input class='deleteBtn' type='button' value='Delete'></div></div>`;
+        messageString += `<div id='message${i}' class='row'>
+        <div class='message col-xs-10'>${messages[i][id]}</div>
+        <div class='col-xs-2'>
+        <input class='editBtn' type='button' value='Edit'>
+        <input class='deleteBtn' type='button' value='Delete'>
+        </div></div>`;
       }
     }
     board.html(messageString);
