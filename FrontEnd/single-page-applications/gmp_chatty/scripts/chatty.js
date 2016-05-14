@@ -11,7 +11,7 @@ var Chatty = (function(){
           method: "GET"
         }).done(function(data){
           messages = JSON.parse(data).messages;
-          console.log("loadMesssages", messages);
+          console.log('loadMesssages running');
           Chatty.setInitialStorage(messages);
       });
     }

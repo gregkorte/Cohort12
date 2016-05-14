@@ -13,7 +13,7 @@ var Chatty = (function(chat){
 
   input.keyup(function(event){
     if(event.keyCode === 13){
-      Chatty.addMessage(input.val(), input.attr('id'));
+      Chatty.addMessage(input.val(), id);
     }
   })
 
@@ -26,6 +26,7 @@ var Chatty = (function(chat){
   })
 
   chat.loadDynamicEvents = function(){
+    console.log('loadDynamicEvents running')
     var del = $('.deleteBtn');
     del.click(function(event){
       var target = event.currentTarget.closest('div');

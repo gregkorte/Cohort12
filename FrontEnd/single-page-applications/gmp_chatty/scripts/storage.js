@@ -5,7 +5,7 @@ var Chatty = (function(chat){
   var allMessages = [];
 
   chat.setInitialStorage = function(messages){
-    console.log('setStorage running');
+    console.log('setInitialStorage running');
     for (var i = 0; i < messages.length; i++){
       for (var key in messages[i]){
         var messageObj = {}
@@ -19,20 +19,40 @@ var Chatty = (function(chat){
   }
 
   chat.getAllMessages = function(){
+    console.log('getAllMessages running');
     return allMessages;
   }
 
   function addToAllMessages(){
+    console.log('addToAllMessages running')
     var storage = allMessages;
     console.log(allMessages);
   }
 
-  function removeFromAllMessages(id){
+  chat.removeFromAllMessages = function(id){
     console.log('removeFromArray running');
+    var index = id.replace('message', '')
+    allMessages.splice(index, 1);
+    resetStorage(allMessages);
   }
 
   function clearAllMessages(){
     console.log('clearStorage running');
+  }
+
+  function resetStorage(modifiedArray){
+    console.log('resetStorage running')
+    allMessages = [];
+    for (var i = 0; i < modifiedArray.length; i++){
+      for (var key in modifiedArray[i]){
+        var messageObj = {}
+        var objKey = `message${i}`;
+        var value = `${modifiedArray[i][key]}`
+        messageObj[objKey] = value;
+        allMessages.push(messageObj);
+      }
+    }
+    console.log(allMessages)
   }
 
   return chat;
