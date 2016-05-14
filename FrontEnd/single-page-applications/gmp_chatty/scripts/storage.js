@@ -40,8 +40,9 @@ var Chatty = (function(chat){
     resetStorage(allMessages);
   }
 
-  function clearAllMessages(){
+  chat.clearAllMessages = function(){
     console.log('clearStorage running');
+    allMessages = [];
   }
 
   function resetStorage(modifiedArray){

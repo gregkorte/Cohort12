@@ -3,19 +3,20 @@
 <head>
   <meta charset='UTF-8'>
   <title>Chatty : Group Single Page Application Project</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id='navBar'>
+  <div id='navBar' class='navbar navbar-default'>
     <div id='logo'>Chatty</div>
-    <input type='text' id='input' placeholder='Add Message'>
-    <input type='button' id='clearBtn' value='Clear Message Board'>
+    <input type='text' id='input' class="form-control" placeholder='Add Message'>
+    <input type='button' id='clearBtn' class="form-control" value='Clear Message Board'>
     <input type='checkbox' id='darkTheme'>Dark Theme
     <input type='checkbox' id='largeText'>Large Text
   </div>
   <div id='messageContainer'>
     <h3>Messages:</h3>
-    <div id='messageBoard'></div>
+    <div id='messageBoard' class='container'></div>
   </div>
 
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
