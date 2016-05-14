@@ -7,6 +7,7 @@ var Chatty = (function(chat){
     console.log('addMessage running');
     Chatty.addToAllMessages(message, id);
     board.prepend(`<div id='id' class='message row'>${message}<input class='deleteBtn' type='button' value='Delete'></div>`);
+    Chatty.loadDynamicEvents();
   }
 
   chat.deleteMessage = function(element, id){

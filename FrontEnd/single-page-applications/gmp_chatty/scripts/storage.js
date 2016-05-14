@@ -18,10 +18,10 @@ var Chatty = (function(chat){
     Chatty.readAllMessages(allMessages);
   }
 
-  chat.getAllMessages = function(){
-    console.log('getAllMessages running');
-    return allMessages;
-  }
+  // chat.getAllMessages = function(){
+  //   console.log('getAllMessages running');
+  //   return allMessages;
+  // }
 
   chat.addToAllMessages = function(message, id){
     console.log('addToAllMessages running')
