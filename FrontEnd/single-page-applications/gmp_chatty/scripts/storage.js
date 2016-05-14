@@ -3,14 +3,17 @@
 var Chatty = (function(chat){
 
   var allMessages = [];
+  var allMessageIds = [];
 
-  chat.setInitialStorage = function(messages){
-    console.log('setInitialStorage running');
+  chat.setStorage = function(messages){
+    console.log('setStorage running');
+    allMessages = [];
     for (var i = 0; i < messages.length; i++){
       for (var key in messages[i]){
-        var messageObj = {}
+        var messageObj = {};
         var objKey = `message${i}`;
-        var value = `${messages[i][key]}`
+        var value = `${messages[i][key]}`;
+        allMessageIds.push(objKey);
         messageObj[objKey] = value;
         allMessages.push(messageObj);
       };
@@ -18,47 +21,27 @@ var Chatty = (function(chat){
     Chatty.readAllMessages(allMessages);
   }
 
-  // chat.getAllMessages = function(){
-  //   console.log('getAllMessages running');
-  //   return allMessages;
-  // }
-
-  chat.addToAllMessages = function(message, id){
-    console.log('addToAllMessages running')
-    var messageObj = {}
-    var objKey = id;
+  chat.addToAllMessages = function(message){
+    console.log('addToAllMessages running');
+    var messageObj = {};
+    var objKey = 'new';
     var value = message
     messageObj[objKey] = value;
     allMessages.unshift(messageObj);
-    resetStorage(allMessages);
+    chat.setStorage(allMessages);
   }
 
   chat.removeFromAllMessages = function(id){
     console.log('removeFromArray running');
     var index = id.replace('message', '')
     allMessages.splice(index, 1);
-    resetStorage(allMessages);
+    chat.setStorage(allMessages);
   }
 
   chat.clearAllMessages = function(){
     console.log('clearStorage running');
     allMessages = [];
-  }
-
-  function resetStorage(modifiedArray){
-    console.log('resetStorage running')
-    console.log(modifiedArray);
-    allMessages = [];
-    for (var i = 0; i < modifiedArray.length; i++){
-      for (var key in modifiedArray[i]){
-        var messageObj = {}
-        var objKey = `message${i}`;
-        var value = `${modifiedArray[i][key]}`
-        messageObj[objKey] = value;
-        allMessages.push(messageObj);
-      }
-    }
-    console.log(allMessages)
+    chat.setStorage(allMessages);
   }
 
   return chat;

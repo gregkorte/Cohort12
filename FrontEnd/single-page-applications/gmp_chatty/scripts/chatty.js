@@ -1,6 +1,5 @@
 var Chatty = (function(){
   var messages = [];
-
   return {
     getMessages: function(){
       return messages;
@@ -11,8 +10,8 @@ var Chatty = (function(){
           method: "GET"
         }).done(function(data){
           messages = JSON.parse(data).messages;
-          console.log('loadMesssages running');
-          Chatty.setInitialStorage(messages);
+          console.log('loadMessages running');
+          Chatty.setStorage(messages);
       });
     }
   }
