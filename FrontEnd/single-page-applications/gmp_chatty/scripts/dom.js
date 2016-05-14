@@ -3,9 +3,9 @@
 var Chatty = (function(chat){
   var board = $('#messageBoard');
 
-  chat.addMessage = function(id, message){
+  chat.addMessage = function(message, id){
     console.log('addMessage running');
-    Chatty.addToAllMessages(message);
+    Chatty.addToAllMessages(message, id);
     board.prepend(`<div id='id' class='message row'>${message}<input class='deleteBtn' type='button' value='Delete'></div>`);
   }
 

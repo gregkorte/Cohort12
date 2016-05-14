@@ -23,10 +23,14 @@ var Chatty = (function(chat){
     return allMessages;
   }
 
-  function addToAllMessages(){
+  chat.addToAllMessages = function(message, id){
     console.log('addToAllMessages running')
-    var storage = allMessages;
-    console.log(allMessages);
+    var messageObj = {}
+    var objKey = id;
+    var value = message
+    messageObj[objKey] = value;
+    allMessages.unshift(messageObj);
+    resetStorage(allMessages);
   }
 
   chat.removeFromAllMessages = function(id){
@@ -42,6 +46,7 @@ var Chatty = (function(chat){
 
   function resetStorage(modifiedArray){
     console.log('resetStorage running')
+    console.log(modifiedArray);
     allMessages = [];
     for (var i = 0; i < modifiedArray.length; i++){
       for (var key in modifiedArray[i]){
