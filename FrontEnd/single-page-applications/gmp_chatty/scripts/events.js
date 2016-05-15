@@ -5,6 +5,7 @@ var Chatty = (function(chat){
   var dark = $('#darkTheme');
   var large = $('#largeText');
   var board = $('#messageBoard');
+  var edit = $('editBtn');
 
   clear.click(function(){
     Chatty.clearMessages();
