@@ -10,7 +10,7 @@ var Chatty = (function(){
           method: "GET"
         }).done(function(data){
           messages = JSON.parse(data).messages;
-          console.log('loadMessages running');
+          // console.log('loadMessages running');
           Chatty.setStorage(messages);
       });
     }

@@ -3,16 +3,23 @@
 var Chatty = (function(chat){
   var board = $('#messageBoard');
   var clear = $('#clearBtn');
+  var edit = $('#editSaveBtn');
 
   chat.deleteMessage = function(element, id){
-    console.log('deleteMessage running');
+    // console.log('deleteMessage running');
     Chatty.removeFromAllMessages(id);
     element.remove();
     checkClearBtnState();
   }
 
+  chat.editMessage = function(target, id, value){
+    // console.log('editMessage running');
+    $(target).html(value);
+    Chatty.editInAllMessages(target, id);
+  }
+
   chat.readAllMessages = function(messages){
-    console.log('readAllMessages running');
+    // console.log('readAllMessages running');
     var messageString = '';
     for (var i = 0; i < messages.length; i++){
       for (var id in messages[i]){
@@ -26,11 +33,12 @@ var Chatty = (function(chat){
     }
     board.html(messageString);
     checkClearBtnState();
+    chat.showClearButton();
     Chatty.loadDynamicEvents();
   }
 
   chat.clearMessages = function(){
-    console.log('clearMessages running');
+    // console.log('clearMessages running');
     Chatty.clearAllMessages();
     board.html('');
   }
@@ -41,6 +49,16 @@ var Chatty = (function(chat){
     } else {
       clear.prop('disabled', false);
     }
+  }
+
+  chat.showClearButton = function(){
+    clear.show();
+    edit.hide();
+  }
+
+  chat.showEditButton = function(){
+    clear.hide();
+    edit.show();
   }
 
   return chat;
