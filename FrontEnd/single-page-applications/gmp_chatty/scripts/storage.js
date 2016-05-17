@@ -2,16 +2,21 @@
 
 var Chatty = (function(chat){
 
+  var users = {
+    names: ["Xavier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"]
+  };
+
   var allMessages = [];
 
   chat.setStorage = function(messages){
     // console.log('setStorage running');
+    console.log(messages)
     allMessages = [];
     for (var i = 0; i < messages.length; i++){
       for (var key in messages[i]){
         var messageObj = {};
-        var objKey = `message${i}`;
-        var value = `${messages[i][key]}`;
+        var objKey = key;
+        var value = messages[i][key];
         messageObj[objKey] = value;
         allMessages.push(messageObj);
       };
@@ -51,6 +56,8 @@ var Chatty = (function(chat){
   chat.getAllMessages = function(){
     return allMessages;
   }
+
+  Chatty.populateUsers(users.names);
 
   return chat;
 })(Chatty || {});

@@ -2,19 +2,44 @@
   "messages":
   [
     {
-      "message0": "This is the first message!"
+      "message0":
+      {
+        "message": "This is the first message!",
+        "user": "Sala",
+        "time": 1
+      }
     },
     {
-      "message1": "This is the second message!"
+      "message1":
+      {
+        "message": "This is the second message!",
+        "user": "Sala",
+        "time": 1
+      }
     },
     {
-      "message2": "This is the third message!"
+      "message2":
+      {
+        "message": "This is the third message!",
+        "user": "Sala",
+        "time": 1
+      }
     },
     {
-      "message3": "This is the fourth message!"
+      "message3":
+      {
+        "message": "This is the fourth message!",
+        "user": "Sala",
+        "time": 1
+      }
     },
     {
-      "message4": "This is the fifth message!"
+      "message4":
+      {
+        "message": "This is the fifth message!",
+        "user": "Sala",
+        "time": 1
+      }
     }
   ]
 }
