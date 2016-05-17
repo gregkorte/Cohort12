@@ -12,8 +12,7 @@ body {
 }
 
 .dark {
-  background-color: darkgray;
-  color: white;
+  opacity: .6;
 }
 
 .large {
@@ -21,7 +20,7 @@ body {
 }
 
 #messageContainer {
-  margin: 200px auto 0;
+  margin: 175px auto 0;
 }
 
 #messageBoard {
@@ -44,4 +43,13 @@ body {
 
 .form-control {
   margin: 10px;
+}
+
+input[type=color] {
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.darkBg {
+  background: #222;
 }

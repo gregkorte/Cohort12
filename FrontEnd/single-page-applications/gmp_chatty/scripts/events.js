@@ -1,5 +1,6 @@
 var Chatty = (function(chat){
 
+  var body = $('body');
   var clear = $('#clearBtn');
   var input = $('#input');
   var dark = $('#darkTheme');
@@ -25,7 +26,9 @@ var Chatty = (function(chat){
   })
 
   dark.change(function(){
+    body.toggleClass('darkBg');
     board.toggleClass('dark');
+    nav.toggleClass('dark')
   })
 
   large.change(function(){
