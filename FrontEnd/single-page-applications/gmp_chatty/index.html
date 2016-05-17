@@ -14,13 +14,36 @@
     <input type='button' id='editSaveBtn' class="form-control" value='Save Edit' class='hidden'>
     <input type='checkbox' id='darkTheme'>Dark Theme
     <input type='checkbox' id='largeText'>Large Text
+    <input type='button' id='themeBtn' value='Change Theme' data-toggle="modal" data-target="#themeModal">
   </div>
   <div id='messageContainer'>
     <h3>Messages:</h3>
     <div id='messageBoard' class='container'></div>
+
+    <div class="modal fade" id="themeModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Change Theme</h4>
+          </div>
+          <div class="modal-body">
+            <p>One fine body&hellip;</p>
+            <input type="color" id='bgColor'>Background color
+            <input type="color" id='fontColor'>Font color
+          </div>
+          <div class="modal-footer">
+            <button id='cancelThemeBtn' type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button id='saveThemeBtn' type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src='scripts/chatty.js'></script>
   <script src='scripts/dom.js'></script>
   <script src='scripts/storage.js'></script>

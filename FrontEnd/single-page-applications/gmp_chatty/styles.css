@@ -21,18 +21,27 @@ body {
 }
 
 #messageContainer {
-  margin: 175px auto 0;
+  margin: 200px auto 0;
 }
 
 #messageBoard {
   margin: 0 auto;
   padding: 20px;
   width: 90%;
-  height: 1000px;
-  border: 1px black solid;
+  border: 1px lightgrey solid;
+  border-radius: 5px;
 }
 
-.message, .col-xs-2 {
+.message, .col-xs-3 {
   padding: 5px;
   z-index: 1;
+}
+
+.buttons {
+  display: inline;
+  text-align: right;
+}
+
+.form-control {
+  margin: 10px;
 }

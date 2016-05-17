@@ -6,6 +6,10 @@ var Chatty = (function(chat){
   var large = $('#largeText');
   var board = $('#messageBoard');
   var editSave = $('#editSaveBtn');
+  var saveTheme = $('#saveThemeBtn');
+  var background = $('#bgColor');
+  var font = $('#fontColor');
+  var nav = $('#navBar');
 
   clear.click(function(){
     Chatty.clearMessages();
@@ -55,6 +59,14 @@ var Chatty = (function(chat){
     })
 
   }
+
+  saveTheme.click(function(event){
+    console.log(event);
+    board.css('background', background.val());
+    board.css('color', font.val());
+    nav.css('background', background.val());
+    nav.css('color', font.val());
+  })
 
   return chat;
 })(Chatty || {});

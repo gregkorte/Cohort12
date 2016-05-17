@@ -24,8 +24,8 @@ var Chatty = (function(chat){
     for (var i = 0; i < messages.length; i++){
       for (var id in messages[i]){
         messageString += `<div id='message${i}' class='row'>
-        <div class='message col-xs-10'>${messages[i][id]}</div>
-        <div class='col-xs-2'>
+        <div class='message col-xs-9'>${messages[i][id]}</div>
+        <div class='buttons col-xs-3'>
         <input class='editBtn' type='button' value='Edit'>
         <input class='deleteBtn' type='button' value='Delete'>
         </div></div>`;
