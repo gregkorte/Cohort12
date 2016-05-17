@@ -27,11 +27,9 @@ var Chatty = (function(chat){
 
   chat.readAllMessages = function(messages){
     // console.log('readAllMessages running');
-    console.log(messages)
     var messageString = '';
     for (var i = 0; i < messages.length; i++){
       for (var id in messages[i]){
-        console.log(messages[i])
         messageString += `<div id='${id}' class='row'>
         <div class='row'><div class='name col-xs-2'>${messages[i][id].user}</div>
         <div class='time col-xs-2'>${messages[i][id].time}</div></div>
@@ -51,7 +49,7 @@ var Chatty = (function(chat){
   chat.clearMessages = function(){
     // console.log('clearMessages running');
     Chatty.clearAllMessages();
-    board.html('');
+    board.html('<div class="noMessages">There are no messages to display.</div>');
   }
 
   function checkClearBtnState(){

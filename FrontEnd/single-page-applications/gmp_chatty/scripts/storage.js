@@ -10,7 +10,6 @@ var Chatty = (function(chat){
 
   chat.setStorage = function(messages){
     // console.log('setStorage running');
-    console.log(messages)
     allMessages = [];
     for (var i = 0; i < messages.length; i++){
       for (var key in messages[i]){
