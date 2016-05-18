@@ -13,17 +13,17 @@ var Chatty = (function(chat){
   }
 
   chat.deleteMessage = function(element, id){
-    console.log('deleteMessage running');
+    // console.log('deleteMessage running');
     console.log(element, id)
     Chatty.removeFromAllMessages(id);
     element.remove();
     checkClearBtnState();
   }
 
-  chat.editMessage = function(target, id, user, time, value){
-    console.log('editMessage running');
+  chat.editMessage = function(target, id, value){
+    // console.log('editMessage running');
     $(target).html(value);
-    Chatty.editInAllMessages(target, id, user, time, value);
+    Chatty.editInAllMessages(target, id, value);
   }
 
   chat.readAllMessages = function(messages){

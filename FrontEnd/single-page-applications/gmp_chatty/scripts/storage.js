@@ -38,15 +38,14 @@ var Chatty = (function(chat){
   }
 
   chat.removeFromAllMessages = function(id){
-    console.log('removeFromArray running');
+    // console.log('removeFromArray running');
     var index = id.replace('message', '')
     allMessages.splice(index, 1);
     chat.setStorage(allMessages);
   }
 
-  chat.editInAllMessages = function(target, id, user, time, message){
-    console.log(target, id, user, time, message)
-    console.log('editInAllMessages running')
+  chat.editInAllMessages = function(target, id, message){
+    // console.log('editInAllMessages running')
     var index = id.replace('message', '')
     allMessages[index][id] = target.textContent;
   }

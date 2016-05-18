@@ -52,12 +52,12 @@ var Chatty = (function(chat){
     edit.click(function(event){
       Chatty.showEditButton();
       user = $("input[name='user']:checked").val();
-      var id = $(event.currentTarget).closest('.row').attr('id');
+      var id = $(event.currentTarget).closest('.messageWrap').attr('id');
       var target = $(event.currentTarget).closest('.row').children('.message')[0];
       var textToEdit = target.textContent;
       input.focus().val(textToEdit).select();
       input.keyup(function(event){
-        Chatty.editMessage(target, id, user, modTime, input.val());
+        Chatty.editMessage(target, id, input.val());
       });
     })
 
