@@ -19,10 +19,10 @@ var Chatty = (function(chat){
     checkClearBtnState();
   }
 
-  chat.editMessage = function(target, id, value){
-    // console.log('editMessage running');
+  chat.editMessage = function(target, id, user, time, value){
+    console.log('editMessage running');
     $(target).html(value);
-    Chatty.editInAllMessages(target, id);
+    Chatty.editInAllMessages(target, id, user, time, value);
   }
 
   chat.readAllMessages = function(messages){

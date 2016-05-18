@@ -11,6 +11,9 @@ var Chatty = (function(chat){
   var background = $('#bgColor');
   var font = $('#fontColor');
   var nav = $('#navBar');
+  var time = new Date;
+  var modTime = time.getHours() + ':' + time.getMinutes();
+  var user;
 
   clear.click(function(){
     Chatty.clearMessages();
@@ -20,9 +23,7 @@ var Chatty = (function(chat){
   // functionality for both add and edit!
   input.keyup(function(event){
     if(event.keyCode === 13){
-      var user = user = $("input[name='user']:checked").val();
-      var time = new Date;
-      var modTime = time.getHours() + ':' + time.getMinutes();
+      user = $("input[name='user']:checked").val();
       Chatty.addToAllMessages(user, modTime, input.val());
       input.val('');
     }
@@ -50,12 +51,13 @@ var Chatty = (function(chat){
 
     edit.click(function(event){
       Chatty.showEditButton();
+      user = $("input[name='user']:checked").val();
       var id = $(event.currentTarget).closest('.row').attr('id');
       var target = $(event.currentTarget).closest('.row').children('.message')[0];
       var textToEdit = target.textContent;
       input.focus().val(textToEdit).select();
       input.keyup(function(event){
-        Chatty.editMessage(target, id, input.val());
+        Chatty.editMessage(target, id, user, modTime, input.val());
       });
     })
 

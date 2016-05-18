@@ -13,10 +13,10 @@ var Chatty = (function(chat){
     allMessages = [];
     for (var i = 0; i < messages.length; i++){
       for (var key in messages[i]){
+        key1 = `message${i}`;
         var messageObj = {};
-        var objKey = key;
         var value = messages[i][key];
-        messageObj[objKey] = value;
+        messageObj[key1] = value;
         allMessages.push(messageObj);
       };
     }
@@ -25,7 +25,6 @@ var Chatty = (function(chat){
 
   chat.addToAllMessages = function(user, time, message){
     // console.log('addToAllMessages running');
-    console.log(user, time, message)
     var messageObj = {
       'new': {
         'message': message,
@@ -34,7 +33,6 @@ var Chatty = (function(chat){
       }
     };
     allMessages.unshift(messageObj);
-    console.log(allMessages)
     chat.setStorage(allMessages);
   }
 
@@ -45,8 +43,9 @@ var Chatty = (function(chat){
     chat.setStorage(allMessages);
   }
 
-  chat.editInAllMessages = function(target, id){
-    // console.log('editInAllMessages running')
+  chat.editInAllMessages = function(target, id, user, time, message){
+    console.log(target, id, user, time, message)
+    console.log('editInAllMessages running')
     var index = id.replace('message', '')
     allMessages[index][id] = target.textContent;
   }
