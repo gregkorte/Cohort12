@@ -13,10 +13,24 @@ var CarLot = (function(lot){
         var carDiv = e.currentTarget;
         input.value = '';
         input.focus();
+        lot.resetStyles();
+        lot.changeStyles(carDiv);
+        lot.mirrorText(carDiv, input);
       })
     }
 
   };
+
+  lot.changeStyles = function(carDiv){
+    carDiv.classList.add('bg', 'thick');
+  }
+
+  lot.resetStyles = function(){
+    for (var i = 0; i < cars.length; i++){
+      var carDiv = cars[i];
+      carDiv.classList.remove('bg', 'thick');
+    }
+  }
 
   return lot;
 })(CarLot || {});
