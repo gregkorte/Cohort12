@@ -32,13 +32,18 @@ var Chatty = (function(chat){
     for (var i = 0; i < messages.length; i++){
       for (var id in messages[i]){
         messageString += `<div id='${id}' class='row messageWrap'>
-        <div class='row'><div class='name col-xs-2'>${messages[i][id].user}</div>
-        <div class='time col-xs-2'>${messages[i][id].time}</div></div>
-        <div class='row'><div class='message col-xs-8'>${messages[i][id].message}</div>
-        <div class='buttons col-xs-4'>
-        <input class='editBtn btn btn-default' type='button' value='Edit'>
-        <input class='deleteBtn btn btn-default' type='button' value='Delete'>
-        </div></div></div>`;
+          <div class='row'>
+            <span class='name'>${messages[i][id].user}</span>
+            <span class='time'>${messages[i][id].time}</span>
+          </div>
+          <div class='row'>
+            <span class='row message col-xs-10'>${messages[i][id].message}</span>
+            <span class='buttons col-xs-2'>
+              <div class='editBtn glyphicon glyphicon-pencil' style='cursor:pointer' title='Edit'></div>
+              <div class='deleteBtn glyphicon glyphicon-trash' style='cursor:pointer' title='Delete'></div>
+            </span>
+          </div>
+        </div>`;
       }
     }
     board.html(messageString);
@@ -70,7 +75,6 @@ var Chatty = (function(chat){
     clear.hide();
     edit.show();
   }
-
 
   return chat;
 })(Chatty || {});

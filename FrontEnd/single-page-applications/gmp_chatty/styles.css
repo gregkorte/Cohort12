@@ -41,6 +41,11 @@ body {
   text-align: right;
 }
 
+.editBtn, .deleteBtn {
+  font-size: .8em;
+  color: grey;
+}
+
 .form-control {
   margin: 10px;
 }
@@ -52,4 +57,21 @@ input[type=color] {
 
 .darkBg {
   background: #222;
+}
+
+.name {
+  font-weight: bold;
+  font-size: .8em;
+}
+
+.time {
+  font-size: .8em;
+}
+
+.message {
+  font-size: .8em;
+}
+
+.row {
+  margin: 0;
 }
