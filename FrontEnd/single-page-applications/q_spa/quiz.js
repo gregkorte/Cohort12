@@ -10,11 +10,12 @@ var CarLot = (function(lot){
       if(i % 3 === 0){
         outputString += `<div class='row'>`
       }
-      outputString += `<div class='car col-xs-4'>
+      outputString += `<div class='car col-xs-4'
+      style='border-color:${inventory[i].color}'>
       <div>${inventory[i].year}</div>
       <div>${inventory[i].make}</div>
       <div>${inventory[i].model}</div>
-      <div>${inventory[i].description}</div>
+      <div><p>${inventory[i].description}</p></div>
       <div>${inventory[i].price}</div>
       <div>${inventory[i].purchased}</div>
       </div>`
