@@ -13,7 +13,8 @@ var Chatty = (function(chat){
   }
 
   chat.deleteMessage = function(element, id){
-    // console.log('deleteMessage running');
+    console.log('deleteMessage running');
+    console.log(element, id)
     Chatty.removeFromAllMessages(id);
     element.remove();
     checkClearBtnState();
@@ -30,7 +31,7 @@ var Chatty = (function(chat){
     var messageString = '';
     for (var i = 0; i < messages.length; i++){
       for (var id in messages[i]){
-        messageString += `<div id='${id}' class='row'>
+        messageString += `<div id='${id}' class='row messageWrap'>
         <div class='row'><div class='name col-xs-2'>${messages[i][id].user}</div>
         <div class='time col-xs-2'>${messages[i][id].time}</div></div>
         <div class='row'><div class='message col-xs-8'>${messages[i][id].message}</div>

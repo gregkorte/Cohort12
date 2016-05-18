@@ -45,7 +45,7 @@ var Chatty = (function(chat){
     var edit = $('.editBtn');
 
     del.click(function(event){
-      var target = event.currentTarget.closest('.row');
+      var target = event.currentTarget.closest('.messageWrap');
       Chatty.deleteMessage(target, target.id);
     })
 

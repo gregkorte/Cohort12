@@ -20,6 +20,7 @@ var Chatty = (function(chat){
         allMessages.push(messageObj);
       };
     }
+    console.log('B4 readAll', allMessages)
     Chatty.readAllMessages(allMessages);
   }
 
@@ -37,7 +38,7 @@ var Chatty = (function(chat){
   }
 
   chat.removeFromAllMessages = function(id){
-    // console.log('removeFromArray running');
+    console.log('removeFromArray running');
     var index = id.replace('message', '')
     allMessages.splice(index, 1);
     chat.setStorage(allMessages);
