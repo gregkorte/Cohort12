@@ -1,12 +1,29 @@
 'use-strict';
 var CarLot = (function(lot){
 
+  var output = document.getElementById('output');
+  var outputString = '';
+
   function populatePage (inventory) {
-    console.log(inventory);
     // Loop over the inventory and populate the page
     for (var i = 0; i < inventory.length; i++){
-      console.log(inventory[i])
+      if(i % 3 === 0){
+        outputString += `<div class='row'>`
+      }
+      outputString += `<div class='car col-xs-4'>
+      <div>${inventory[i].year}</div>
+      <div>${inventory[i].make}</div>
+      <div>${inventory[i].model}</div>
+      <div>${inventory[i].description}</div>
+      <div>${inventory[i].price}</div>
+      <div>${inventory[i].purchased}</div>
+      </div>`
+
+      if((i + 1) % 3 === 0){
+        outputString += `</div>`
+      }
     }
+    output.innerHTML = outputString;
 
     // Now that the DOM is loaded, establish all the event listeners needed
     CarLot.activateEvents();
