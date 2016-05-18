@@ -20,7 +20,10 @@ var Chatty = (function(chat){
   // functionality for both add and edit!
   input.keyup(function(event){
     if(event.keyCode === 13){
-      Chatty.addToAllMessages(input.val());
+      var user = user = $("input[name='user']:checked").val();
+      var time = new Date;
+      var modTime = time.getHours() + ':' + time.getMinutes();
+      Chatty.addToAllMessages(user, modTime, input.val());
       input.val('');
     }
   })

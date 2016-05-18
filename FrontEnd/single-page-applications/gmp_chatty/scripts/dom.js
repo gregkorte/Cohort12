@@ -8,7 +8,7 @@ var Chatty = (function(chat){
 
   chat.populateUsers = function(allUsers){
     for (var i = 0; i < allUsers.length; i++){
-      users.append(`<input type='radio' name='user'>${allUsers[i]}`);
+      users.append(`<input type='radio' name='user' value='${allUsers[i]}'>${allUsers[i]}`);
     }
   }
 

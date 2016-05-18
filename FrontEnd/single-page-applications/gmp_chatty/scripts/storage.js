@@ -23,13 +23,18 @@ var Chatty = (function(chat){
     Chatty.readAllMessages(allMessages);
   }
 
-  chat.addToAllMessages = function(message){
+  chat.addToAllMessages = function(user, time, message){
     // console.log('addToAllMessages running');
-    var messageObj = {};
-    var objKey = 'new';
-    var value = message
-    messageObj[objKey] = value;
+    console.log(user, time, message)
+    var messageObj = {
+      'new': {
+        'message': message,
+        'user': user,
+        'time': time
+      }
+    };
     allMessages.unshift(messageObj);
+    console.log(allMessages)
     chat.setStorage(allMessages);
   }
 
