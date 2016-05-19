@@ -1,10 +1,11 @@
 'use-strict';
 var CarLot = (function(lot){
 
-  var cars = document.getElementsByClassName('car');
 
   lot.activateEvents = function(){
-    console.log('activateEvents running');
+    // console.log('activateEvents running');
+
+    var cars = document.getElementsByClassName('car');
 
     for(var i = 0; i < cars.length; i++){
       currentCar = cars[i];
@@ -13,23 +14,32 @@ var CarLot = (function(lot){
         var carDiv = e.currentTarget;
         input.value = '';
         input.focus();
-        lot.resetStyles();
-        lot.changeStyles(carDiv);
-        lot.mirrorText(carDiv, input);
+        lot.resetStyles(cars);
+        lot.changeStyles(carDiv, 'grey');
+        lot.mirrorText(carDiv, input)
       })
     }
 
   };
 
-  lot.changeStyles = function(carDiv){
-    carDiv.classList.add('bg', 'thick');
+  lot.changeStyles = function(carDiv, grey){
+    carDiv.classList.add(grey, 'thick');
   }
 
-  lot.resetStyles = function(){
+  lot.resetStyles = function(cars){
     for (var i = 0; i < cars.length; i++){
       var carDiv = cars[i];
-      carDiv.classList.remove('bg', 'thick');
+      carDiv.classList.remove('grey', 'thick');
     }
+  }
+
+  lot.mirrorText = function(carDiv, input){
+    input.addEventListener('keyup', function(){
+      if (carDiv.classList.contains('grey')){
+        var text = carDiv.querySelector('p');
+        text.innerHTML = input.value;
+      }
+    })
   }
 
   return lot;

@@ -12,11 +12,9 @@ var CarLot = (function(lot){
       }
       outputString += `<div class='car col-xs-4'
       style='border-color:${inventory[i].color}'>
-      <div>${inventory[i].year}</div>
-      <div>${inventory[i].make}</div>
-      <div>${inventory[i].model}</div>
+      <div>${inventory[i].year} ${inventory[i].make} ${inventory[i].model}</div>
       <div><p>${inventory[i].description}</p></div>
-      <div>${inventory[i].price}</div>
+      <div>$${inventory[i].price}</div>
       <div>${inventory[i].purchased}</div>
       </div>`
 
