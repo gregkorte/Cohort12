@@ -10,18 +10,34 @@ body {
 #navBar {
   padding: 20px;
   background-color: pink;
+  border: 1px solid black;
 }
 
 #filter {
+  margin-top: 10px;
+  border: 1px solid black;
   display: inline-block;
-  padding: 20px;
+  padding: 2%;
   background-color: lightblue;
   width: 25%;
+  float:left;
+  font-size: .8em;
+}
+
+#leftCheck {
+  float: left;
+}
+
+#filterBtn {
+  text-align: center;
 }
 
 #songOutput {
+  margin-top: 10px;
+  margin-left: 2%;
+  border: 1px solid black;
   display: inline-block;
-  padding: 20px;
+  padding: 2%;
   background-color: lightyellow;
-  width: 60%;
+  width: 64%;
 }
