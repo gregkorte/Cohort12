@@ -2,3 +2,26 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
+#container {
+  padding: 2px;
+}
+
+#navBar {
+  padding: 20px;
+  background-color: pink;
+}
+
+#filter {
+  display: inline block;
+  /*padding: 20px;*/
+  background-color: lightblue;
+  width: 25%;
+}
+
+#songOutput {
+  display: inline block;
+  /*padding: 20px;*/
+  background-color: lightyellow;
+  width: 75%;
+}
