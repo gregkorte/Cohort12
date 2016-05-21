@@ -4,7 +4,11 @@ var output = document.getElementById('songOutput');
 var addMusicLink = document.getElementById('add-music-view-link');
 var listMusicLink = document.getElementById('list-music-view-link');
 var addMusicView = document.getElementById('add-music-view');
-var listMusicView = document.getElementById('list-music-view')
+var listMusicView = document.getElementById('list-music-view');
+var addSongBtn = document.getElementById('add-song-btn');
+var addSong = document.getElementById('add-song');
+var addArtist = document.getElementById('add-artist');
+var addAlbum = document.getElementById('add-album');
 
 songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
 songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
@@ -15,10 +19,13 @@ songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little
 songs.push("Perpetual Change > by Yes on the album The Yes Album");
 songs.unshift("Sheep > by Pink Floyd on the album Animals");
 
-for (var i = 0; i < songs.length; i++){
-  var newSong = songs[i].replace(/[(*@!]/g, '').replace('>', '-');
-  newSongs.push(newSong);
-  output.innerHTML += "<div>" + newSong; + "</div>";
+function populateSongs(){
+  output.innerHTML = '';
+  for (var i = 0; i < songs.length; i++){
+    var newSong = songs[i].replace(/[(*@!]/g, '').replace('>', '-');
+    newSongs.push(newSong);
+    output.innerHTML += "<div>" + newSong; + "</div>";
+  }
 }
 
 addMusicLink.addEventListener('click', function(){
@@ -31,5 +38,13 @@ listMusicLink.addEventListener('click', function(){
   listMusicView.classList.remove('hidden');
 })
 
-console.log(newSongs);
+addSongBtn.addEventListener('click', function(){
+  songString = addSong.value + " - " + "by " + addArtist.value + " on the album " + addAlbum.value;
+  songs.push(songString);
+  addSong.value = '';
+  addAlbum.value = '';
+  addArtist.value = '';
+  populateSongs();
+})
 
+populateSongs();
