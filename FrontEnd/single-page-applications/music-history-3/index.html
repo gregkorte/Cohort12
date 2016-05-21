@@ -9,11 +9,11 @@
   <div id='container'>
 
     <div id='navBar'>
-      <a href="#">View music</a> |
-      <a href="#">Add music</a> |
+      <a href="#" id='list-music-view-link'>View music</a> |
+      <a href="#" id='add-music-view-link'>Add music</a> |
       <a href="#">Profile</a>
     </div>
-    <div id="content">
+    <div id="list-music-view">
       <div id='filter'>
         <div>
           <div>
@@ -69,14 +69,14 @@
       <div id='songOutput'></div>
     </div>
 
-    <div id="addSong">
+    <div id="add-music-view" class='hidden'>
       <label for="add-song">Add a Song</label>
       <div><input type="text" id="add-song"></div>
       <label for="add-album">Add an Album</label>
       <div><input type="text" id="add-album"></div>
       <label for="add-artist">Add an Artist</label>
       <div><input type="text" id="add-artist"></div>
-      <input type="button" value="Add Song!">
+      <button id="add-song-btn">Add Song!</button>
     </div>
 
   </div>

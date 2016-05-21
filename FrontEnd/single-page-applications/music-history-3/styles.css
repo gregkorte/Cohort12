@@ -45,3 +45,7 @@ input, select {
   background-color: lightyellow;
   width: 64%;
 }
+
+.hidden {
+  display: none;
+}

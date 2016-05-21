@@ -1,6 +1,10 @@
 var songs = [];
 var newSongs = [];
 var output = document.getElementById('songOutput');
+var addMusicLink = document.getElementById('add-music-view-link');
+var listMusicLink = document.getElementById('list-music-view-link');
+var addMusicView = document.getElementById('add-music-view');
+var listMusicView = document.getElementById('list-music-view')
 
 songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
 songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
@@ -17,4 +21,15 @@ for (var i = 0; i < songs.length; i++){
   output.innerHTML += "<div>" + newSong; + "</div>";
 }
 
+addMusicLink.addEventListener('click', function(){
+  addMusicView.classList.remove('hidden');
+  listMusicView.classList.add('hidden');
+})
+
+listMusicLink.addEventListener('click', function(){
+  addMusicView.classList.add('hidden');
+  listMusicView.classList.remove('hidden');
+})
+
 console.log(newSongs);
+
