@@ -32,6 +32,10 @@ body {
   text-align: center;
 }
 
+input, select {
+  margin: 10px 2px;
+}
+
 #songOutput {
   margin-top: 10px;
   margin-left: 2%;
