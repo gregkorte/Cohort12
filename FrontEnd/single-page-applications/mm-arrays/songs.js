@@ -118,9 +118,6 @@ addSongBtn.addEventListener('click', function(){
   songList.push(addSong.value);
   artistList.unshift(addArtist.value);
   albumList.push(addAlbum.value);
-  console.log('on click', songList)
-  console.log('on click', artistList)
-  console.log('on click', albumList)
   addSong.value = '';
   addAlbum.value = '';
   addArtist.value = '';
