@@ -1,28 +1,52 @@
-# Music History Part 3
+# Very Large Array - Muscle Memory Exercise
+
+## Prerequisite
+Students should have music history 3 completed before attempting this muscle memory exercise.
 
 ## Setup
 
-These commands are a helpful quick start. You may choose to ignore them completely and create your own directory structure. If you choose to use this recommendation, just copy the commands below and paste. It doesn't matter what directory you are currently in.
+1. Create a branch in your `musichistory` repository named `MM-arrays`.
+1. Switch to that branch.
 
-```bash
-cd ~/workspace/musichistory
-git checkout -b version-3
-```
+## Requirements
 
-## Instructions
+`Muscle memory exercises are meant to improve your muscule memory for important javascript concepts. While doing these exercises try to minimize, if not eliminate copying and pasting.`
 
-Time to make Music History into a single page application. Before you begin please [review the sample code](https://github.com/nashville-software-school/front-end-milestones/blob/master/single-page-applications/resources/SP_JS_SINGLE_PAGE_APPLICATIONS.md) I provided in JavaScript 103 about building a simple SPA.
+Use JavaScript arrays and innerHTML to show the music you love.
 
-1. In the navigation bar, make sure you have two links labeled "List Music", and "Add Music".
-1. Add a DOM element that contains some input fields for the user to enter in the name of a song, the artist for the song, and the album. You do not need to enclose them in a `<form>` element because we're not actually submitting this form anywhere.
-1. Add a `<button>` element at the bottom of the input fields labeled "Add".
-1. The input fields and the add button make up the *Add Music View*.
-1. The existing view - the combination of the filter form and the song list - will be referred to as the *List Music View*.
-1. The *Add Music View* should not appear when the user first visits your page. The song list with the corresponding filter form should be visible.
-1. When the user clicks on "Add Music" in the navigation bar, the *List Music View* should be hidden, and the *Add Music View* should be shown ([see example wireframe](https://moqups.com/chortlehoort/1E8LJX7r/p:a0cf17f7b)).
-1. When the user clicks on "List Music" in the navigation bar, the *Add Music View* should be hidden, and the *List Music View* should be shown ([see example wireframe](https://moqups.com/chortlehoort/1E8LJX7r/p:a8d99d401)).
-1. Once the user fills out the song form and clicks the add button, you should collect all values from the input fields, add the song to your array of songs, and update the song list in the DOM.
+Students must use JavaScript to create arrays, modify them (using only the following methods: join, push, reverse, sort, concat or unshift), and output lists to the DOM.
 
-## Merging
+1. Each student must create three separate arrays, one for songs, one for albums, and one for artists.
+1. The song array should be initialized with 10 songs.
+1. Each subsequent array should hold the corresponding data (artist and album).
+    *For this exercise make sure each song is from a unique artist and album. We will deal with multiples in a later exercise*
+1. An output should be added on the add song page, under the form, for each of the sections (songs, artists & albums).
+1. Each output section should have some sort of title or headline before it.
+1. Add 2 more songs from the add song form.
+    + Each song should be added to the end of the song array.
+    + Each artist should be added to the beginning of the artist array.
+    + Each album should be added to the end of the album array.
+1. For each output element send the corresponding data as follows:
+    *   Output vertically descending alphabetically.
+    *   Output vertically ascending alphabetically.
+    *   Output vertically exactly as they were added.
+    *   Output vertically exactly as they were added, inverted.
+    *   Output horizontally descending alphabetically, separated by `, `.
+    *   Output horizontally ascending alphabetically, separated by ` >> `.
+    *   Output horizontally exactly as they were added, separated by ` : `.
+    *   Output horizontally exactly as they were added, inverted, separated by ` | `.
+1. Each output area should be separated by a headline tag.
 
-Remember to merge the `version-3` branch back into `master` when you're done.
+#### Bonus
+*   Handle both upper and lowercase inputs. The way this is accomplished is up to the student. Additional array methods may have to be employed to complete this bonus item.
+
+
+## Merging your branch
+
+After you've got all of the requirements completed, follow these steps.
+
+1. In your `musichistory` directory, enter the command `git checkout master`. This switches you back to the master branch.
+1. `git merge -X theirs MM-arrays`
+1. If you see a vim screen with a default message in it just `:x` to save and exit.
+
+Your branch is now merged into the master branch and you can push the master branch up to Github with `git push origin master`.
