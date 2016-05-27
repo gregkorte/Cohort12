@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <title>Music History 4</title>
+</head>
+<body>
+  <div id='container'>
+
+    <div id='navBar'>
+      <a href="#" id='list-music-view-link'>View music</a> |
+      <a href="#" id='add-music-view-link'>Add music</a> |
+      <a href="#">Profile</a>
+    </div>
+    <div id="list-music-view">
+      <div id='filter'>
+        <div>
+          <div>
+            <label for="filterLength">Song Length</label>
+          </div>
+            <input type="range" id="filterLength" value="1000" max="2000" step="100">
+          <div>
+            <label for="filterArtists">Artist</label>
+          </div>
+          <select name="filterArtists" id="filterArtists">
+            <option focus>Select Artist</option>
+            <option value="Pink Floyd">Pink Floyd</option>
+            <option value="Yes">Yes</option>
+            <option value="The Shins">The Shins</option>
+            <option value="Nujabes">Nujabes</option>
+            <option value="Porcupine Tree">Porcupine Tree</option>
+          </select>
+        </div>
+        <div>
+          <div>
+            <label for="filterAlbums">Album</label>
+          </div>
+          <select name="filterAlbums" id="filterAlbums">
+            <option focus>Select Album</option>
+            <option value="Animals">Animals</option>
+            <option value="The Yes Album">The Yes Album</option>
+            <option value="Chutes Too Narrow">Chutes Too Narrow</option>
+            <option value="Modal Soul">Modal Soul</option>
+            <option value="Signify">Signify</option>
+          </select>
+        </div>
+        <div>
+          <div>
+            <label for="filterGenres">Genre</label>
+          </div>
+          <div id="filterGenres">
+            <div id="leftCheck">
+              <div><input type="checkbox"> Rock</div>
+              <div><input type="checkbox"> Pop</div>
+              <div><input type="checkbox"> Blues</div>
+            </div>
+            <div id="rightCheck">
+              <div><input type="checkbox"> Classical</div>
+              <div><input type="checkbox"> Jazz</div>
+              <div><input type="checkbox"> Progressive</div>
+            </div>
+          </div>
+        </div>
+        <div id='filterBtn'>
+          <input type="button" value="Filter">
+        </div>
+      </div>
+      <div id='songOutput'></div>
+    </div>
+
+    <div id="add-music-view" class='hidden'>
+      <label for="add-song">Add a Song</label>
+      <div><input type="text" id="add-song"></div>
+      <label for="add-album">Add an Album</label>
+      <div><input type="text" id="add-album"></div>
+      <label for="add-artist">Add an Artist</label>
+      <div><input type="text" id="add-artist"></div>
+      <button id="add-song-btn">Add Song!</button>
+    </div>
+
+  </div>
+
+  <script src='songs.js'></script>
+</body>
+</html>
