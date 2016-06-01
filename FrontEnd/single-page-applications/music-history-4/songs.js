@@ -17,61 +17,76 @@ var listAddSongs = document.getElementById('list-add-songs');
 var listAddArtists = document.getElementById('list-add-artists');
 var listAddAlbums = document.getElementById('list-add-albums');
 
-// songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-// songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-// songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-// songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-// songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
-
-// songs.push("Perpetual Change > by Yes on the album The Yes Album");
-// songs.unshift("Sheep > by Pink Floyd on the album Animals");
-
-function executeThisCodeAfterFileIsLoaded () {
-  // A bit more about what `this` is here. What is the execution context?
-  console.log(this.responseText);
-
-  // Show usage of JSON.parse() here to get a POJO
-  populateSongs(JSON.parse(this.responseText).songs);
+function success(data, str) {
+  populateSongs(JSON.parse(data).songs, str);
 }
 
-function executeThisCodeIfXHRFails(){
+function fail(){
   console.log('XHR call failed')
 }
 
-// Create an XHR object
 var myRequest = new XMLHttpRequest();
-
-// XHR objects emit events when their operation is complete, or an error occurs
-myRequest.addEventListener("load", executeThisCodeAfterFileIsLoaded);
-myRequest.addEventListener("error", executeThisCodeIfXHRFails);
-
-// Then tell the XHR object exactly what to do
+myRequest.addEventListener("load", function(){
+  success(this.responseText, 'first');
+});
+myRequest.addEventListener("error", fail);
 myRequest.open("GET", "songs1.json");
-
-// Tell the XHR object to start
 myRequest.send();
 
 
-function populateSongs(songs){
-  console.log(songs)
-  output.innerHTML = '';
-  for (var i = 0; i < songs.length; i++){
-    newSongs.push(songs[i]);
-    output.innerHTML += "<div class='song'>" + songs[i].title + " by "
-    + songs[i].artist + " on the album, " + songs[i].album
-    + "<input type='button' class='del' value='Delete'>"
-    + "</div>";
+function populateSongs(songs, str){
+  switch(str){
+    case 'first':
+    output.innerHTML = '';
+    for (var i = 0; i < songs.length; i++){
+      newSongs.push(songs[i]);
+      output.innerHTML += "<div class='song'>" + songs[i].title + " by "
+      + songs[i].artist + " on the album, " + songs[i].album
+      + "<input type='button' class='delBtn' value='Delete'>"
+      + "</div>"
+    }
+    output.innerHTML += "<div id='more'></div>"
+      + "<input type='button' id='moreBtn' value='More'>";
+    loadDynamicEvents();
+    break;
+  case 'second':
+    var more = document.getElementById('more');
+    var moreBtn = document.getElementById('moreBtn');
+    more.innerHTML = '';
+    for (var i = 0; i < songs.length; i++){
+      newSongs.push(songs[i]);
+      more.innerHTML += "<div class='song'>" + songs[i].title + " by "
+      + songs[i].artist + " on the album, " + songs[i].album
+      + "<input type='button' class='delBtn' value='Delete'>"
+      + "</div>"
+    }
+    moreBtn.setAttribute('disabled', 'disabled')
+    loadDynamicEvents();
+    break;
   }
-  loadDynamicEvents();
+}
+
+function getMoreSongs(){
+  var moreRequest = new XMLHttpRequest();
+  moreRequest.addEventListener("load", function(){
+    success(this.responseText, 'second')
+  });
+  moreRequest.addEventListener("error", fail);
+  moreRequest.open("GET", "songs2.json");
+  moreRequest.send();
 }
 
 function loadDynamicEvents(){
   var songs = document.getElementsByClassName('song');
+  var moreBtn = document.getElementById('moreBtn');
   for (var i = 0; i < songs.length; i++){
     songs[i].addEventListener('click', function(e){
       e.currentTarget.remove();
     })
   }
+  moreBtn.addEventListener('click', function(e){
+    getMoreSongs();
+  });
 }
 
 function listElements(){
@@ -236,6 +251,3 @@ addSongBtn.addEventListener('click', function(){
   listElements();
   // populateSongs();
 })
-
-// populateSongs();
-
