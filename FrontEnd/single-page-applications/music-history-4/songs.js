@@ -57,9 +57,20 @@ function populateSongs(songs){
   output.innerHTML = '';
   for (var i = 0; i < songs.length; i++){
     newSongs.push(songs[i]);
-    output.innerHTML += "<div>" + songs[i].title + " by "
-    + songs[i].artist + " on the album, "
-    + songs[i].album + "</div>";
+    output.innerHTML += "<div class='song'>" + songs[i].title + " by "
+    + songs[i].artist + " on the album, " + songs[i].album
+    + "<input type='button' class='del' value='Delete'>"
+    + "</div>";
+  }
+  loadDynamicEvents();
+}
+
+function loadDynamicEvents(){
+  var songs = document.getElementsByClassName('song');
+  for (var i = 0; i < songs.length; i++){
+    songs[i].addEventListener('click', function(e){
+      e.currentTarget.remove();
+    })
   }
 }
 
