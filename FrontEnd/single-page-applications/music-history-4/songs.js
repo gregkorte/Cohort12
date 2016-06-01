@@ -2,7 +2,7 @@ var songList = ['Dogs', 'Fields of Gold', 'Perpetual Change', 'Signify', 'Feathe
 var artistList = ['Pink Floyd', 'Sting', 'Yes', 'Porcupine Tree', 'Nujabes', 'Led Zeppelin', 'The Beatles', 'The Shins', 'Alice In Chains', 'Peter Gabriel'];
 var albumList = ['Animals', 'Ten Summoner\'s Tales', 'The Yes Album', 'Signify', 'Modal Soul', 'Led Zeppelin III', 'Revolver', 'Oh, Inverted World', 'Alice In Chains', 'So!'];
 
-// var songs = [];
+var songs = [];
 var newSongs = [];
 var output = document.getElementById('songOutput');
 var addMusicLink = document.getElementById('add-music-view-link');
@@ -249,5 +249,5 @@ addSongBtn.addEventListener('click', function(){
   addAlbum.value = '';
   addArtist.value = '';
   listElements();
-  // populateSongs();
+  populateSongs();
 })
