@@ -31,7 +31,7 @@ function executeThisCodeAfterFileIsLoaded () {
   console.log(this.responseText);
 
   // Show usage of JSON.parse() here to get a POJO
-  populateSongs(JSON.parse(this.responseText).music)
+  populateSongs(JSON.parse(this.responseText).songs);
 }
 
 function executeThisCodeIfXHRFails(){
@@ -53,11 +53,13 @@ myRequest.send();
 
 
 function populateSongs(songs){
+  console.log(songs)
   output.innerHTML = '';
   for (var i = 0; i < songs.length; i++){
-    var newSong = songs[i].replace(/[(*@!]/g, '').replace('>', '-');
-    newSongs.push(newSong);
-    output.innerHTML += "<div>" + newSong; + "</div>";
+    newSongs.push(songs[i]);
+    output.innerHTML += "<div>" + songs[i].title + " by "
+    + songs[i].artist + " on the album, "
+    + songs[i].album + "</div>";
   }
 }
 
