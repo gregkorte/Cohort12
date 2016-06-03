@@ -1,6 +1,16 @@
-var songList = ['Dogs', 'Fields of Gold', 'Perpetual Change', 'Signify', 'Feather', 'Immigrant Song', 'Tomorrow Never Knows', 'New Slang', 'Over Now', 'Sledgehammer'];
-var artistList = ['Pink Floyd', 'Sting', 'Yes', 'Porcupine Tree', 'Nujabes', 'Led Zeppelin', 'The Beatles', 'The Shins', 'Alice In Chains', 'Peter Gabriel'];
-var albumList = ['Animals', 'Ten Summoner\'s Tales', 'The Yes Album', 'Signify', 'Modal Soul', 'Led Zeppelin III', 'Revolver', 'Oh, Inverted World', 'Alice In Chains', 'So!'];
+var songObjects =
+[
+  {'Title': 'Dogs', 'Artist': 'Pink Floyd', 'Album': 'Animals', 'Genre': 'Rock'},
+  {'Title': 'Fields Of Gold', 'Artist': 'Sting', 'Album': 'Ten Summoner\'s Tales', 'Genre': 'Rock'},
+  {'Title': 'Perpetual Change', 'Artist': 'Yes', 'Album': 'The Yes Album', 'Genre': 'Progressive'},
+  {'Title': 'Signify', 'Artist': 'Porcupine Tree', 'Album': 'Signify', 'Genre': 'Progressive'},
+  {'Title': 'Feather', 'Artist': 'Nujabes', 'Album': 'Modal Soul', 'Genre': 'Nu Jazz'},
+  {'Title': 'Immigrant Song', 'Artist': 'Led Zeppelin', 'Album': 'Led Zeppelin III', 'Genre': 'Rock'},
+  {'Title': 'Tomorrow Never Knows', 'Artist': 'The Beatles', 'Album': 'Revolver', 'Genre': 'Rock'},
+  {'Title': 'New Slang', 'Artist': 'The Shins', 'Album': 'Oh, Inverted World', 'Genre': 'Rock'},
+  {'Title': 'Over Now', 'Artist': 'Alice In Chains', 'Album': 'Alice In Chains', 'Genre': 'Rock'},
+  {'Title': 'Sledgehammer', 'Artist': 'Peter Gabriel', 'Album': 'So!', 'Genre': 'Rock'}
+]
 
 var songs = [];
 var newSongs = [];
@@ -89,145 +99,145 @@ function loadDynamicEvents(){
   });
 }
 
-function listElements(){
+// function listElements(){
 
-  var newSongList = [].concat(songList);
-  var newArtistList = [].concat(artistList);
-  var newAlbumList = [].concat(albumList);
+//   var newSongList = [].concat(songList);
+//   var newArtistList = [].concat(artistList);
+//   var newAlbumList = [].concat(albumList);
 
-  console.log(songList);
+//   console.log(songList);
 
-  var listSongs = '';
-  var listArtists = '';
-  var listAlbums = '';
+//   var listSongs = '';
+//   var listArtists = '';
+//   var listAlbums = '';
 
-//SONGS FOR LOOPS
-  listSongs += '<h3>Vertical Added Order:</h3>';
-  for (var i = 0; i < newSongList.length; i++){
-    listSongs += '<div>' + newSongList[i] + '</div>';
-  }
+// //SONGS FOR LOOPS
+//   listSongs += '<h3>Vertical Added Order:</h3>';
+//   for (var i = 0; i < newSongList.length; i++){
+//     listSongs += '<div>' + newSongList[i] + '</div>';
+//   }
 
-  listSongs += '<h3>Horizontal Added Order:</h3><p>';
-  for (var i = 0; i < newSongList.length; i++){
-    listSongs += newSongList[i] + ' : '
-  }
+//   listSongs += '<h3>Horizontal Added Order:</h3><p>';
+//   for (var i = 0; i < newSongList.length; i++){
+//     listSongs += newSongList[i] + ' : '
+//   }
 
-  listSongs += '</p><h3>Vertical Added Order Inverted:</h3>';
-  for (var i = newSongList.length - 1; i >= 0; i--){
-    listSongs += '<div>' + newSongList[i] + '</div>';
-  }
+//   listSongs += '</p><h3>Vertical Added Order Inverted:</h3>';
+//   for (var i = newSongList.length - 1; i >= 0; i--){
+//     listSongs += '<div>' + newSongList[i] + '</div>';
+//   }
 
-  listSongs += '<h3>Horizontal Added Order Inverted:</h3><p>';
-  for (var i = newSongList.length - 1; i >= 0; i--){
-    listSongs += newSongList[i] + ' | ';
-  }
+//   listSongs += '<h3>Horizontal Added Order Inverted:</h3><p>';
+//   for (var i = newSongList.length - 1; i >= 0; i--){
+//     listSongs += newSongList[i] + ' | ';
+//   }
 
-  listSongs += '</p><h3>Vertical Alphabetical Ascending:</h3>';
-  for (var i = 0; i < newSongList.sort().length; i++){
-    listSongs += '<div>' + newSongList[i] + '</div>';
-  }
+//   listSongs += '</p><h3>Vertical Alphabetical Ascending:</h3>';
+//   for (var i = 0; i < newSongList.sort().length; i++){
+//     listSongs += '<div>' + newSongList[i] + '</div>';
+//   }
 
-  listSongs += '<h3>Horizontal Alphabetical Ascending:</h3><p>';
-  for (var i = 0; i < newSongList.length; i++){
-    listSongs += newSongList[i] + ' >> ';
-  }
+//   listSongs += '<h3>Horizontal Alphabetical Ascending:</h3><p>';
+//   for (var i = 0; i < newSongList.length; i++){
+//     listSongs += newSongList[i] + ' >> ';
+//   }
 
-  listSongs += '</p><h3>Vertical Alphabetical Descending:</h3>';
-  for (var i = newSongList.length - 1; i >= 0; i--){
-    listSongs += '<div>' + newSongList[i] + '</div>';
-  }
+//   listSongs += '</p><h3>Vertical Alphabetical Descending:</h3>';
+//   for (var i = newSongList.length - 1; i >= 0; i--){
+//     listSongs += '<div>' + newSongList[i] + '</div>';
+//   }
 
-  listSongs += '<h3>Horizontal Alphabetical Descending:</h3><p>';
-  for (var i = newSongList.length - 1; i >= 0; i--){
-    listSongs += newSongList[i] + ', ';
-  }
+//   listSongs += '<h3>Horizontal Alphabetical Descending:</h3><p>';
+//   for (var i = newSongList.length - 1; i >= 0; i--){
+//     listSongs += newSongList[i] + ', ';
+//   }
 
-//ARTISTS FOR LOOPS
-  listArtists += '<h3>Vertical Added Order:</h3>';
-  for (var i = 0; i < newArtistList.length; i++){
-    listArtists += '<div>' + newArtistList[i] + '</div>';
-  }
+// //ARTISTS FOR LOOPS
+//   listArtists += '<h3>Vertical Added Order:</h3>';
+//   for (var i = 0; i < newArtistList.length; i++){
+//     listArtists += '<div>' + newArtistList[i] + '</div>';
+//   }
 
-  listArtists += '<h3>Horizontal Added Order:</h3><p>';
-  for (var i = 0; i < newArtistList.length; i++){
-    listArtists += newArtistList[i] + ' : '
-  }
+//   listArtists += '<h3>Horizontal Added Order:</h3><p>';
+//   for (var i = 0; i < newArtistList.length; i++){
+//     listArtists += newArtistList[i] + ' : '
+//   }
 
-  listArtists += '</p><h3>Vertical Added Order Inverted:</h3>';
-  for (var i = newArtistList.length - 1; i >= 0; i--){
-    listArtists += '<div>' + newArtistList[i] + '</div>';
-  }
+//   listArtists += '</p><h3>Vertical Added Order Inverted:</h3>';
+//   for (var i = newArtistList.length - 1; i >= 0; i--){
+//     listArtists += '<div>' + newArtistList[i] + '</div>';
+//   }
 
-  listArtists += '<h3>Horizontal Added Order Inverted:</h3><p>';
-  for (var i = newArtistList.length - 1; i >= 0; i--){
-    listArtists += newArtistList[i] + ' | ';
-  }
+//   listArtists += '<h3>Horizontal Added Order Inverted:</h3><p>';
+//   for (var i = newArtistList.length - 1; i >= 0; i--){
+//     listArtists += newArtistList[i] + ' | ';
+//   }
 
-  listArtists += '</p><h3>Vertical Alphabetical Ascending:</h3>';
-  for (var i = 0; i < newArtistList.sort().length; i++){
-    listArtists += '<div>' + newArtistList[i] + '</div>';
-  }
+//   listArtists += '</p><h3>Vertical Alphabetical Ascending:</h3>';
+//   for (var i = 0; i < newArtistList.sort().length; i++){
+//     listArtists += '<div>' + newArtistList[i] + '</div>';
+//   }
 
-  listArtists += '<h3>Horizontal Alphabetical Ascending:</h3><p>';
-  for (var i = 0; i < newArtistList.length; i++){
-    listArtists += newArtistList[i] + ' >> ';
-  }
+//   listArtists += '<h3>Horizontal Alphabetical Ascending:</h3><p>';
+//   for (var i = 0; i < newArtistList.length; i++){
+//     listArtists += newArtistList[i] + ' >> ';
+//   }
 
-  listArtists += '</p><h3>Vertical Alphabetical Descending:</h3>';
-  for (var i = newArtistList.length - 1; i >= 0; i--){
-    listArtists += '<div>' + newArtistList[i] + '</div>';
-  }
+//   listArtists += '</p><h3>Vertical Alphabetical Descending:</h3>';
+//   for (var i = newArtistList.length - 1; i >= 0; i--){
+//     listArtists += '<div>' + newArtistList[i] + '</div>';
+//   }
 
-  listArtists += '<h3>Horizontal Alphabetical Descending:</h3><p>';
-  for (var i = newArtistList.length - 1; i >= 0; i--){
-    listArtists += newArtistList[i] + ', ';
-  }
+//   listArtists += '<h3>Horizontal Alphabetical Descending:</h3><p>';
+//   for (var i = newArtistList.length - 1; i >= 0; i--){
+//     listArtists += newArtistList[i] + ', ';
+//   }
 
-//ALBUMS FOR LOOPS
-  listAlbums += '<h3>Vertical Added Order:</h3>';
-  for (var i = 0; i < newAlbumList.length; i++){
-    listAlbums += '<div>' + newAlbumList[i] + '</div>';
-  }
+// //ALBUMS FOR LOOPS
+//   listAlbums += '<h3>Vertical Added Order:</h3>';
+//   for (var i = 0; i < newAlbumList.length; i++){
+//     listAlbums += '<div>' + newAlbumList[i] + '</div>';
+//   }
 
-  listAlbums += '<h3>Horizontal Added Order:</h3><p>';
-  for (var i = 0; i < newAlbumList.length; i++){
-    listAlbums += newAlbumList[i] + ' : '
-  }
+//   listAlbums += '<h3>Horizontal Added Order:</h3><p>';
+//   for (var i = 0; i < newAlbumList.length; i++){
+//     listAlbums += newAlbumList[i] + ' : '
+//   }
 
-  listAlbums += '</p><h3>Vertical Added Order Inverted:</h3>';
-  for (var i = newAlbumList.length - 1; i >= 0; i--){
-    listAlbums += '<div>' + newAlbumList[i] + '</div>';
-  }
+//   listAlbums += '</p><h3>Vertical Added Order Inverted:</h3>';
+//   for (var i = newAlbumList.length - 1; i >= 0; i--){
+//     listAlbums += '<div>' + newAlbumList[i] + '</div>';
+//   }
 
-  listAlbums += '<h3>Horizontal Added Order Inverted:</h3><p>';
-  for (var i = newAlbumList.length - 1; i >= 0; i--){
-    listAlbums += newAlbumList[i] + ' | ';
-  }
+//   listAlbums += '<h3>Horizontal Added Order Inverted:</h3><p>';
+//   for (var i = newAlbumList.length - 1; i >= 0; i--){
+//     listAlbums += newAlbumList[i] + ' | ';
+//   }
 
-  listAlbums += '</p><h3>Vertical Alphabetical Ascending:</h3>';
-  for (var i = 0; i < newAlbumList.sort().length; i++){
-    listAlbums += '<div>' + newAlbumList[i] + '</div>';
-  }
+//   listAlbums += '</p><h3>Vertical Alphabetical Ascending:</h3>';
+//   for (var i = 0; i < newAlbumList.sort().length; i++){
+//     listAlbums += '<div>' + newAlbumList[i] + '</div>';
+//   }
 
-  listAlbums += '<h3>Horizontal Alphabetical Ascending:</h3><p>';
-  for (var i = 0; i < newAlbumList.length; i++){
-    listAlbums += newAlbumList[i] + ' >> ';
-  }
+//   listAlbums += '<h3>Horizontal Alphabetical Ascending:</h3><p>';
+//   for (var i = 0; i < newAlbumList.length; i++){
+//     listAlbums += newAlbumList[i] + ' >> ';
+//   }
 
-  listAlbums += '</p><h3>Vertical Alphabetical Descending:</h3>';
-  for (var i = newAlbumList.length - 1; i >= 0; i--){
-    listAlbums += '<div>' + newAlbumList[i] + '</div>';
-  }
+//   listAlbums += '</p><h3>Vertical Alphabetical Descending:</h3>';
+//   for (var i = newAlbumList.length - 1; i >= 0; i--){
+//     listAlbums += '<div>' + newAlbumList[i] + '</div>';
+//   }
 
-  listAlbums += '<h3>Horizontal Alphabetical Descending:</h3><p>';
-  for (var i = newAlbumList.length - 1; i >= 0; i--){
-    listAlbums += newAlbumList[i] + ', ';
-  }
+//   listAlbums += '<h3>Horizontal Alphabetical Descending:</h3><p>';
+//   for (var i = newAlbumList.length - 1; i >= 0; i--){
+//     listAlbums += newAlbumList[i] + ', ';
+//   }
 
-  listAddSongs.innerHTML = listSongs;
-  listAddArtists.innerHTML = listArtists;
-  listAddAlbums.innerHTML = listAlbums;
-}
+//   listAddSongs.innerHTML = listSongs;
+//   listAddArtists.innerHTML = listArtists;
+//   listAddAlbums.innerHTML = listAlbums;
+// }
 
 addMusicLink.addEventListener('click', function(){
   addMusicView.classList.remove('hidden');
@@ -240,6 +250,7 @@ listMusicLink.addEventListener('click', function(){
 })
 
 addSongBtn.addEventListener('click', function(){
+  console.log(songObjects);
   songString = addSong.value + " - " + "by " + addArtist.value + " on the album " + addAlbum.value;
   songs.push(songString);
   songList.push(addSong.value);
@@ -248,6 +259,6 @@ addSongBtn.addEventListener('click', function(){
   addSong.value = '';
   addAlbum.value = '';
   addArtist.value = '';
-  listElements();
+  // listElements();
   populateSongs();
 })
