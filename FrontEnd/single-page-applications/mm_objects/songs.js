@@ -104,6 +104,10 @@ function loadDynamicEvents(){
 
 function listSongObjects(){
   listAddSongObjects.innerHTML = '<h2>Song Objects</h2>';
+  listAddSongs.innerHTML = '<h2>Songs</h2>';
+  listAddArtists.innerHTML = '<h2>Artists</h2>';
+  listAddAlbums.innerHTML = '<h2>Albums</h2>';
+  listAddGenres.innerHTML = '<h2>Genres</h2>';
   for (var i = 0; i < songObjects.length; i++){
     var song = songObjects[i];
     listAddSongObjects.innerHTML += '<div class="song"><h3>' + song.title
@@ -111,38 +115,10 @@ function listSongObjects(){
     + '<div>Album: ' + song.album + '</div>'
     + '<div>Genre: ' + song.genre + '</div>'
     + '</div>'
-  }
-}
-
-function listSongs(){
-  listAddSongs.innerHTML = '<h2>Songs</h2>';
-  for (var i = 0; i < songObjects.length; i++){
-    var song = songObjects[i].title;
-    listAddSongs.innerHTML += '<p>' + song + '</p>'
-  }
-}
-
-function listArtists(){
-  listAddArtists.innerHTML = '<h2>Artists</h2>';
-  for (var i = 0; i < songObjects.length; i++){
-    var artist = songObjects[i].artist;
-    listAddArtists.innerHTML += '<p>' + artist + '</p>'
-  }
-}
-
-function listAlbums(){
-  listAddAlbums.innerHTML = '<h2>Albums</h2>';
-  for (var i = 0; i < songObjects.length; i++){
-    var album = songObjects[i].album;
-    listAddAlbums.innerHTML += '<p>' + album + '</p>'
-  }
-}
-
-function listGenres(){
-  listAddGenres.innerHTML = '<h2>Genres</h2>';
-  for (var i = 0; i < songObjects.length; i++){
-    var genre = songObjects[i].genre;
-    listAddGenres.innerHTML += '<p>' + genre + '</p>'
+    listAddSongs.innerHTML += '<p>' + song.title + '</p>'
+    listAddArtists.innerHTML += '<p>' + song.artist + '</p>'
+    listAddAlbums.innerHTML += '<p>' + song.album + '</p>'
+    listAddGenres.innerHTML += '<p>' + song.genre + '</p>'
   }
 }
 
@@ -170,9 +146,5 @@ addSongBtn.addEventListener('click', function(){
   addArtist.value = '';
   addGenre.value = '';
   listSongObjects();
-  listSongs();
-  listArtists();
-  listAlbums();
-  listGenres();
   populateSongs();
 })
