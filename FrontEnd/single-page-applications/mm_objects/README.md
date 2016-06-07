@@ -18,7 +18,7 @@ Students must use JavaScript to filter objects, modify them, and output lists to
 
 1. Using the three separate arrays you created in the Very Large Array exercise code the following functionality.
 1. Create a new empty array called `songObjects`.
-1. For each song in your previous array create an object that includes the song title, artist, album and genre.
+1. For each song in your previous array create an object inside the `songObjects` array that includes the song title, artist, album and genre.
 1. Add a genre input to the add song section in the `index.html` file.
 1. Use for loops to populate the DOM on the add song section.
 1. Each song should be displayed as follows:

@@ -24,7 +24,11 @@ var addSong = document.getElementById('add-song');
 var addArtist = document.getElementById('add-artist');
 var addAlbum = document.getElementById('add-album');
 var addGenre = document.getElementById('add-genre');
+var listAddSongObjects = document.getElementById('list-add-song-objects');
 var listAddSongs = document.getElementById('list-add-songs');
+var listAddArtists = document.getElementById('list-add-artists');
+var listAddAlbums = document.getElementById('list-add-albums');
+var listAddGenres = document.getElementById('list-add-genres');
 
 function success(data, str) {
   populateSongs(JSON.parse(data).songs, str);
@@ -98,17 +102,48 @@ function loadDynamicEvents(){
   });
 }
 
-function listSongs(){
-  listAddSongs.innerHTML = ''
+function listSongObjects(){
+  listAddSongObjects.innerHTML = '<h2>Song Objects</h2>';
   for (var i = 0; i < songObjects.length; i++){
     var song = songObjects[i];
-    listAddSongs.innerHTML += '<div class="song"><h3>' + song.title
+    listAddSongObjects.innerHTML += '<div class="song"><h3>' + song.title
     + '</h3><div>Artist: ' + song.artist + '</div>'
     + '<div>Album: ' + song.album + '</div>'
     + '<div>Genre: ' + song.genre + '</div>'
     + '</div>'
   }
+}
 
+function listSongs(){
+  listAddSongs.innerHTML = '<h2>Songs</h2>';
+  for (var i = 0; i < songObjects.length; i++){
+    var song = songObjects[i].title;
+    listAddSongs.innerHTML += '<p>' + song + '</p>'
+  }
+}
+
+function listArtists(){
+  listAddArtists.innerHTML = '<h2>Artists</h2>';
+  for (var i = 0; i < songObjects.length; i++){
+    var artist = songObjects[i].artist;
+    listAddArtists.innerHTML += '<p>' + artist + '</p>'
+  }
+}
+
+function listAlbums(){
+  listAddAlbums.innerHTML = '<h2>Albums</h2>';
+  for (var i = 0; i < songObjects.length; i++){
+    var album = songObjects[i].album;
+    listAddAlbums.innerHTML += '<p>' + album + '</p>'
+  }
+}
+
+function listGenres(){
+  listAddGenres.innerHTML = '<h2>Genres</h2>';
+  for (var i = 0; i < songObjects.length; i++){
+    var genre = songObjects[i].genre;
+    listAddGenres.innerHTML += '<p>' + genre + '</p>'
+  }
 }
 
 addMusicLink.addEventListener('click', function(){
@@ -134,6 +169,10 @@ addSongBtn.addEventListener('click', function(){
   addAlbum.value = '';
   addArtist.value = '';
   addGenre.value = '';
+  listSongObjects();
   listSongs();
+  listArtists();
+  listAlbums();
+  listGenres();
   populateSongs();
 })
