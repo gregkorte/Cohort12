@@ -27,14 +27,15 @@ $(document).ready(function() {
     console.log('XHR call failed')
   }
 
-  var myRequest = new XMLHttpRequest();
-  myRequest.addEventListener("load", function(){
-    success(this.responseText, 'first');
+  $.ajax({
+    url: "songs1.json"
+  }).done(function(result) {
+    success(result, 'first')
+    console.log("the contents of songs.json");
+    console.log(result);
+  }).fail(function(){
+    fail();
   });
-  myRequest.addEventListener("error", fail);
-  myRequest.open("GET", "songs1.json");
-  myRequest.send();
-
 
   function populateSongs(songs, str){
     switch(str){
@@ -69,13 +70,13 @@ $(document).ready(function() {
   }
 
   function getMoreSongs(){
-    var moreRequest = new XMLHttpRequest();
-    moreRequest.addEventListener("load", function(){
-      success(this.responseText, 'second')
+    $.ajax({
+        url: "songs2.json"
+    }).done(function(result){
+      success(result, 'second');
+    }).fail(function(){
+      fail();
     });
-    moreRequest.addEventListener("error", fail);
-    moreRequest.open("GET", "songs2.json");
-    moreRequest.send();
   }
 
   function loadDynamicEvents(){
