@@ -24,7 +24,7 @@ $(document).ready(function() {
   }
 
   function fail(){
-    console.log('XHR call failed')
+    console.log('AJAX call failed')
   }
 
   $.ajax({
@@ -63,7 +63,7 @@ $(document).ready(function() {
                 + "<input type='button' class='delBtn' value='Delete'>"
                 + "</div>")
       }
-      moreBtn.setAttribute('disabled', 'disabled')
+      moreBtn.attr('disabled', 'disabled')
       loadDynamicEvents();
       break;
     }
@@ -80,14 +80,14 @@ $(document).ready(function() {
   }
 
   function loadDynamicEvents(){
-    var songs = document.getElementsByClassName('song');
-    var moreBtn = document.getElementById('moreBtn');
+    var songs = $('.song');
+    var moreBtn = $('#moreBtn');
     for (var i = 0; i < songs.length; i++){
-      songs[i].addEventListener('click', function(e){
+      songs[i].click(function(e){
         e.currentTarget.remove();
       })
     }
-    moreBtn.addEventListener('click', function(e){
+    moreBtn.click(function(e){
       getMoreSongs();
     });
   }
@@ -232,25 +232,25 @@ $(document).ready(function() {
     listAddAlbums.html(listAlbums);
   }
 
-  addMusicLink.addEventListener('click', function(){
-    addMusicView.classList.remove('hidden');
-    listMusicView.classList.add('hidden');
+  addMusicLink.click(function(){
+    addMusicView.removeClass('hidden');
+    listMusicView.addClass('hidden');
   })
 
-  listMusicLink.addEventListener('click', function(){
-    addMusicView.classList.add('hidden');
-    listMusicView.classList.remove('hidden');
+  listMusicLink.click(function(){
+    addMusicView.addClass('hidden');
+    listMusicView.removeClass('hidden');
   })
 
-  addSongBtn.addEventListener('click', function(){
-    songString = addSong.value + " - " + "by " + addArtist.value + " on the album " + addAlbum.value;
+  addSongBtn.click(function(){
+    songString = addSong.val() + " - " + "by " + addArtist.val() + " on the album " + addAlbum.val();
     songs.push(songString);
     songList.push(addSong.value);
     artistList.unshift(addArtist.value);
     albumList.push(addAlbum.value);
-    addSong.value = '';
-    addAlbum.value = '';
-    addArtist.value = '';
+    addSong.val('');
+    addAlbum.val('');
+    addArtist.val('');
     listElements();
     populateSongs();
   })
