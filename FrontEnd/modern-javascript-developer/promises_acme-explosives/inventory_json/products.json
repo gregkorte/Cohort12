@@ -1,0 +1,85 @@
+{
+    "products": [
+        {
+            "fairy_sparklers":
+            {
+                "id": 0,
+                "type": 0,
+                "name": "Fairy Sparklers",
+                "description": "Multi-colored sparklers that are safe for any age."
+            }
+        },
+        {
+            "gnome_heads":
+            {
+                "id": 1,
+                "type": 0,
+                "name": "Gnome Heads",
+                "description": "Even Grimble Crumble would enjoy these exploding gnomes."
+            }
+        },
+        {
+            "sprite_lights":
+            {
+                "id": 2,
+                "type": 0,
+                "name": "Sprite Lights",
+                "description": "They flitter and flutter in the air, these spritely lights."
+            }
+        },
+        {
+            "tnt":
+            {
+                "id": 0,
+                "type": 1,
+                "name": "TNT",
+                "description": "TNT is one of the most commonly used explosives for industrial and mining applications."
+            }
+        },
+        {
+            "nitroglycerin":
+            {
+                "id": 1,
+                "type": 1,
+                "name": "Nitroglycerin",
+                "description": "The main use of nitroglycerin, by tonnage, is in explosives such as dynamite and in propellants."
+            }
+        },
+        {
+            "nitrocellulose":
+            {
+                "id": 2,
+                "type": 1,
+                "name": "Nitrocellulose",
+                "description": "When dry, nitrocellulose is explosive and can be ignited with heat, spark, or friction."
+            }
+        },
+        {
+            "hmx":
+            {
+                "id": 0,
+                "type": 2,
+                "name": "HMX",
+                "description": "Used in the manufacture of missile warheads and armor-piercing shaped charges."
+            }
+        },
+        {
+            "petn":
+            {
+                "id": 1,
+                "type": 2,
+                "name": "PETN",
+                "description": "Primarily used in booster and bursting charges of small caliber ammunition"
+            }
+        },
+        {
+            "rdx":
+            {
+                "id": 2,
+                "type": 2,
+                "name": "RDX",
+                "description": "RDX forms the base for a number of common military explosives."
+            }
+        }
+    ]
+}
