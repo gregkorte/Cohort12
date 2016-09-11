@@ -1,10 +1,12 @@
 "use strict"
 
-var Battledome = (function(Battledome){
+var Battledome = (function(battledome){
 
-  Battledome.Arena = function(){
-    this.background;
-    this.champion;
-  }
+battledome.Arena = function(){
+  this.background;
+  this.champion;
+}
+
+return battledome;
 
 })(Battledome || {});

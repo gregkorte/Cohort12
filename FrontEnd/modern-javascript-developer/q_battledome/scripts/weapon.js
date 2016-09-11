@@ -1,7 +1,9 @@
 'use strict';
 
-var Battledome = (function(Battledome){
+var Battledome = (function(battledome){
 
-  Battledome.Armory = {};
+  battledome.Armory = {};
+
+  return battledome;
 
 })(Battledome || {});
