@@ -23,6 +23,24 @@ var Battledome = (function(Battledome){
 
   Battledome.BotLab.Amorphous.prototype = new Battledome.BotLab.Robot();
 
+  Battledome.BotLab.Hal9000 = function(){
+    this.adaptablilityBonus = 50;
+  }
+
+  Battledome.BotLab.Hal9000.prototype = new Battledome.BotLab.Amorphous();
+
+  Battledome.BotLab.MCP = function(){
+    this.adaptabilityBonus = 25;
+  }
+
+  Battledome.BotLab.MCP.prototype = new Battledome.BotLab.Amorphous();
+
+  Battledome.BotLab.RedQueen = function(){
+    this.adaptabilityBonus = 40;
+  }
+
+  Battledome.BotLab.RedQueen.prototype = new Battledome.BotLab.Amorphous();
+
   Battledome.BotLab.Android = function(){
     this.healthBonus = 10;
     this.speedBonus = 20;
@@ -50,16 +68,13 @@ var Battledome = (function(Battledome){
 
   Battledome.BotLab.Swarm.prototype = new Battledome.BotLab.Robot();
 
-  let hal = new Battledome.BotLab.Amorphous();
+  let hal = new Battledome.BotLab.Hal9000();
   console.log(hal);
 
-  let sonny = new Battledome.BotLab.Android();
-  console.log(sonny);
+  let mcp = new Battledome.BotLab.MCP();
+  console.log(mcp);
 
-  let grevious = new Battledome.BotLab.Cyborg();
-  console.log(grevious);
-
-  let nanites = new Battledome.BotLab.Swarm();
-  console.log(nanites);
+  let red = new Battledome.BotLab.RedQueen();
+  console.log(red);
 
 })(Battledome || {});
