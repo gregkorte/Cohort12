@@ -1,4 +1,7 @@
 'use strict';
 
-let Armory = {};
+var Battledome = (function(Battledome){
 
+  Battledome.Armory = {};
+
+})(Battledome || {});
