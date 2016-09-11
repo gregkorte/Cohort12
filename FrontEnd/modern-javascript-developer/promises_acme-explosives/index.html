@@ -2,17 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
   <title>ACME Explosives</title>
 </head>
 <body>
-  <select>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-  </select>
+  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Select a Category!</a>
+  <ul id='dropdown1' class='dropdown-content category_selector'></ul>
+  <table class="striped output"></table>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
 <script src="scripts/main.js"></script>

@@ -28,10 +28,64 @@
             }
         },
         {
+            "troll_bogeys":
+            {
+                "id": 3,
+                "type": 1,
+                "name": "Troll Bogeys",
+                "description": "Like Roman candles but with exploding troll snot."
+            }
+        },
+        {
+            "orc_boomers":
+            {
+                "id": 4,
+                "type": 1,
+                "name": "Orc Boomers",
+                "description": "Exploding orc snacks."
+            }
+        },
+        {
+            "gnoll_yappers":
+            {
+                "id": 5,
+                "type": 1,
+                "name": "Gnoll Yappers",
+                "description": "Black cats?? Not these loud yappers."
+            }
+        },
+        {
+            "dragon_bombs":
+            {
+                "id": 6,
+                "type": 2,
+                "name": "Dragon Bombs",
+                "description": "Did you see Lord of the Rings???"
+            }
+        },
+        {
+            "dwarven_mortars":
+            {
+                "id": 7,
+                "type": 2,
+                "name": "Dwarven Mortars",
+                "description": "Dwarf team ready! Here we go...."
+            }
+        },
+        {
+            "the_pegasus":
+            {
+                "id": 8,
+                "type": 2,
+                "name": "The Pegasus",
+                "description": "Exploding firework that that takes the shape of a flying horse."
+            }
+        },
+        {
             "tnt":
             {
-                "id": 0,
-                "type": 1,
+                "id": 9,
+                "type": 3,
                 "name": "TNT",
                 "description": "TNT is one of the most commonly used explosives for industrial and mining applications."
             }
@@ -39,8 +93,8 @@
         {
             "nitroglycerin":
             {
-                "id": 1,
-                "type": 1,
+                "id": 10,
+                "type": 3,
                 "name": "Nitroglycerin",
                 "description": "The main use of nitroglycerin, by tonnage, is in explosives such as dynamite and in propellants."
             }
@@ -48,17 +102,71 @@
         {
             "nitrocellulose":
             {
-                "id": 2,
-                "type": 1,
+                "id": 11,
+                "type": 3,
                 "name": "Nitrocellulose",
                 "description": "When dry, nitrocellulose is explosive and can be ignited with heat, spark, or friction."
             }
         },
         {
+            "ammonium_nitrate":
+            {
+                "id": 12,
+                "type": 4,
+                "name": "Ammonium Nitrate",
+                "description": "Amonium Nitrate is a popular industrial explosive which accounts for 80% of explosives used in North America."
+            }
+        },
+        {
+            "ammonium_picrate":
+            {
+                "id": 13,
+                "type": 4,
+                "name": "Ammonium Picrate",
+                "description": "Ammonium picrate is a salt formed by reacting picric acid and ammonia. In the TNT family but less stable."
+            }
+        },
+        {
+            "lead_nitrate":
+            {
+                "id": 14,
+                "type": 4,
+                "name": "Lead Nitrate",
+                "description": "Known since the Middle Ages by the name plumb dulcis, the production of lead(II) nitrate from either metallic lead or lead oxide in nitric acid was small-scale, for direct use in making other lead compounds."
+            }
+        },
+        {
+            "tetryl":
+            {
+                "id": 15,
+                "type": 5,
+                "name": "Tetryl",
+                "description": "Tetryl is an explosive compound used to make detonators and explosive booster charges."
+            }
+        },
+        {
+            "pentolite":
+            {
+                "id": 16,
+                "type": 5,
+                "name": "Pentolite",
+                "description": "Civilian pentolite has a detonation velocity of approximately 7,800 metres per second."
+            }
+        },
+        {
+            "aluminium_powder":
+            {
+                "id": 17,
+                "type": 5,
+                "name": "Aluminium Powder",
+                "description": "Aluminium powder is powdered aluminium. This was originally produced by mechanical means using a stamp mill to create flakes. "
+            }
+        },
+        {
             "hmx":
             {
-                "id": 0,
-                "type": 2,
+                "id": 18,
+                "type": 6,
                 "name": "HMX",
                 "description": "Used in the manufacture of missile warheads and armor-piercing shaped charges."
             }
@@ -66,8 +174,8 @@
         {
             "petn":
             {
-                "id": 1,
-                "type": 2,
+                "id": 19,
+                "type": 6,
                 "name": "PETN",
                 "description": "Primarily used in booster and bursting charges of small caliber ammunition"
             }
@@ -75,10 +183,64 @@
         {
             "rdx":
             {
-                "id": 2,
-                "type": 2,
+                "id": 20,
+                "type": 6,
                 "name": "RDX",
                 "description": "RDX forms the base for a number of common military explosives."
+            }
+        },
+        {
+            "amatol":
+            {
+                "id": 21,
+                "type": 7,
+                "name": "Amatol",
+                "description": "Amatol is a highly explosive material made from a mixture of TNT and ammonium nitrate."
+            }
+        },
+        {
+            "brium_nitrate":
+            {
+                "id": 22,
+                "type": 7,
+                "name": "Barium Nitrate",
+                "description": "Barium nitrate's properties make it suitable for use in various military applications, including thermite grenades and incendiary ammunition."
+            }
+        },
+        {
+            "baratol":
+            {
+                "id": 23,
+                "type": 7,
+                "name": "Baratol",
+                "description": "Baratol is an explosive made of a mixture of TNT and barium nitrate."
+            }
+        },
+        {
+            "composition_B":
+            {
+                "id": 24,
+                "type": 8,
+                "name": "Composition B",
+                "description": "'Comp B', is an explosive consisting of castable mixtures of RDX and TNT. It is used as the main explosive filling in artillery projectiles, rockets, land mines, hand grenades and various other munitions."
+            }
+        },
+        {
+            "octol":
+            {
+                "id": 25,
+                "type": 8,
+                "name": "Octol",
+                "description": "The applications of Octol are generally military; e.g., shaped charges and warheads used in guided missiles and submunitions."
+            }
+        },
+        {
+            "tritonal":
+            {
+                "id": 26,
+                "type": 8,
+                "name": "Tritonal",
+                "description": "Tritonal is a mixture of 80% TNT and 20% aluminium powder, used in several types of ordnance such as air-dropped bombs."
             }
         }
     ]
