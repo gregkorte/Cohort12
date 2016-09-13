@@ -1,0 +1,22 @@
+{
+  "name": "q_battledome",
+  "description": "",
+  "main": "main.js",
+  "authors": [
+    "gregkorte <gryphionsroost@yahoo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/gregkorte/Cohort12",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
+  }
+}
