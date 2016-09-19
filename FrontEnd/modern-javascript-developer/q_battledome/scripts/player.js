@@ -9,7 +9,7 @@ var Battledome = (function(battledome){
     this.name = name;
     this.wins;
     this.loses;
-    this.botHangar;
+    this.botHangar = [];
   }
 
   battledome.Combatants.Player.prototype.setBot = function(botType){
