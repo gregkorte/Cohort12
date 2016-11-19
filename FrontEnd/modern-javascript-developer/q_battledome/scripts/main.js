@@ -23,6 +23,7 @@ var Battledome = (function(battledome){
   }
 
   battledome.Arena.prototype.setPlayer = function(player, name){
+    console.log(player, name)
     this[player] = new Battledome.Combatants.Player(name);
   }
 

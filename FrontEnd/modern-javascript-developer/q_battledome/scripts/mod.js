@@ -11,9 +11,9 @@ var Battledome = (function(battledome){
   }
 
   battledome.SciFacility.AccessControl = function(){
-    this.defenseDuration = 3;
-    this.defenseType = '';
-    this.damageReduction = 1;
+    this.defenseDuration = 1;
+    this.defenseType = 'electrical';
+    this.damageReduction = .40;
     this.description = '';
     this.name = '';
   }
@@ -21,9 +21,9 @@ var Battledome = (function(battledome){
   battledome.SciFacility.AccessControl.prototype = new battledome.SciFacility.Mod();
 
   battledome.SciFacility.SurgeShield = function(){
-    this.defenseDuration = 3;
-    this.defenseType = '';
-    this.damageReduction = 1;
+    this.defenseDuration = 1;
+    this.defenseType = 'electrical';
+    this.damageReduction = .30;
     this.description = '';
     this.name = '';
   }
@@ -31,9 +31,9 @@ var Battledome = (function(battledome){
   battledome.SciFacility.SurgeShield.prototype = new battledome.SciFacility.Mod();
 
   battledome.SciFacility.AcquireFunction = function(){
-    this.defenseDuration = 3;
-    this.defenseType = '';
-    this.damageReduction = 1;
+    this.defenseDuration = 1;
+    this.defenseType = 'hack';
+    this.damageReduction = .10;
     this.description = '';
     this.name = '';
   }
@@ -41,8 +41,8 @@ var Battledome = (function(battledome){
   battledome.SciFacility.AcquireFunction.prototype = new battledome.SciFacility.Mod();
 
   battledome.SciFacility.XRayVision = function(){
-    this.defenseDuration = 3;
-    this.defenseType = '';
+    this.defenseDuration = 1;
+    this.defenseType = 'discover';
     this.damageReduction = 1;
     this.description = '';
     this.name = '';

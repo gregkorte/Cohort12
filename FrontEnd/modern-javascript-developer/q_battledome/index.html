@@ -3,15 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <title>The Robot Battledome</title>
+  <link rel='stylesheet' href='css/styles.css'>
+  <link rel='stylesheet' href='lib/bower_components/bootstrap/dist/css/bootstrap.min.css'>
 </head>
 <body>
 
+  <div id='selectionScreen'>
+    <div id='select'>
+      <div class='header'>Robot BattleDome</div>
+      <div class='botLab container'>
+        <div class='players row'>
+          <div class='p1Player player col-xs-5 col-sm-offset-1'><input class='p1Input' type='text' placeholder='Player One'></div>
+          <div class='p2Player player col-xs-5'><input class='p2Input' type='text' placeholder='Player Two'></div>
+        </div>
+        <div class='images row'>
+          <div class='p1Image image col-xs-5 col-sm-offset-1'></div>
+          <div class='p2Image image col-xs-5'></div>
+        </div>
+        <div class='stats row'>
+          <div class='p1Stats stat col-xs-5 col-sm-offset-1'>Bot Stats</div>
+          <div class='p2Stats stat col-xs-5'>Bot Stats</div>
+        </div>
+        <div class='buttons row'>
+          <div class='button col-xs-5 col-sm-offset-1'>
+            <input class='p1Button' type='button' value='Build P1 Bot'>
+          </div>
+          <div class='button col-xs-5'>
+            <input class='p2Button' type='button' value='Build P2 Bot'>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 <script src='lib/bower_components/jquery/dist/jquery.min.js'></script>
+<script src='lib/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
 <script src='scripts/main.js'></script>
 <script src='scripts/player.js'></script>
 <script src='scripts/robot.js'></script>
 <script src='scripts/weapon.js'></script>
 <script src='scripts/mod.js'></script>
 <script src='scripts/app.js'></script>
+<script src='scripts/domHandler.js'></script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+body {
+  font-family: 'Arial Black', Gadget, sans-seri;
+  text-align: center;
+  margin: 50px auto;
+}
+
+#selectionScreen {
+  background-image: url('../assets/images/battledome.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+.header {
+  font-size: 10vw;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+.botLab {
+  margin: 10px;
+  text-align: center;
+}
+
+.images {
+  margin: 10px;
+}
+
+.stats {
+  margin: 10px;
+}
+
+.buttons {
+  margin: 10px;
+  text-align: center;
+}
+
+.player {
+  display: inline;
+  margin: 10px;
+}
+
+.p2Image {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.image {
+  display: inline;
+  margin: 10px;
+  background: url('../assets/images/botLab.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.stat {
+  display: inline;
+  margin: 10px;
+}
+
+.button {
+  display: inline;
+  margin: 10px;
+}
+
+.table {
+  background: #000;
+  opacity: 0.8;
+  color: #fff;
+  text-align: left;
+}
+.table td{
+  text-indent: 10px;
+}
