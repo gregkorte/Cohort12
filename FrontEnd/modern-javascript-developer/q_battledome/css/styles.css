@@ -1,19 +1,50 @@
 body {
-  font-family: 'Arial Black', Gadget, sans-seri;
+  font-family: 'Arial', Gadget, sans-seri;
   text-align: center;
-  margin: 50px auto;
+  background-color: #000;
 }
 
-#selectionScreen {
-  background-image: url('../assets/images/battledome.png');
-  background-size: cover;
+#background {
+  background: url('../assets/images/parallax/galaxy.png');
+  z-index: -500;
+  background-attachment: fixed;
+  background-size: 100% auto;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
+}
 
+#starField {
+  background: url('../assets/images/parallax/foreground.png') 5% 5%,
+    url('../assets/images/parallax/midground.png') 20% 30%,
+    url('../assets/images/parallax/background.png') 90% 110%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  -webkit-transition: left 200s linear;
+}
+
+#starField {
+  left: -5000px;
+}
+
+#background:hover #starField {
+  left: -9999px;
+}
+
+#playerSelection, #weaponSelection, #modSelection {
+  background-image: url(../assets/images/battledome_trans_neg.png);
+  background-attachment: fixed;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: 500;
 }
 
 .header {
-  font-size: 10vw;
+  font-size: 7vw;
   text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
@@ -28,27 +59,13 @@ body {
                0 20px 20px rgba(0,0,0,.15);
 }
 
-.botLab {
-  margin: 10px;
-  text-align: center;
-}
-
-.images {
-  margin: 10px;
-}
-
-.stats {
-  margin: 10px;
-}
-
-.buttons {
-  margin: 10px;
-  text-align: center;
-}
-
-.player {
-  display: inline;
-  margin: 10px;
+div.player input {
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #000;
+  opacity: 0.8;
 }
 
 .p2Image {
@@ -62,29 +79,77 @@ body {
 
 .image {
   display: inline;
-  margin: 10px;
-  background: url('../assets/images/botLab.png');
+  background-image: url(../assets/images/botLab.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  height: 500px;
 }
 
-.stat {
-  display: inline;
-  margin: 10px;
-}
-
-.button {
-  display: inline;
-  margin: 10px;
-}
-
-.table {
-  background: #000;
-  opacity: 0.8;
+.stat h2 {
   color: #fff;
-  text-align: left;
 }
-.table td{
-  text-indent: 10px;
+
+.selectionLink {
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+.selectionLink, li {
+  color: #000;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  opacity: 0.8;
+}
+
+.selectionLink:hover, li.player1weapon:hover, li.player1mod:hover, li.player2weapon:hover, li.player2mod:hover {
+  cursor: pointer;
+}
+
+ul {
+  -webkit-padding-start: 0;
+}
+
+li {
+  list-style-type: none;
+  vertical-align: center;
+  padding-left: 30px;
+  font-weight: 700;
+}
+
+span.abilityScore, .check {
+  float: right;
+  margin-right: 20px;
+}
+
+.check {
+  background: #000;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  color: #7cfc00;
+  font-family: Monoton;
+  -webkit-animation: neonGreen 1.5s ease-in-out infinite alternate;
+  -moz-animation: neonGreen 1.5s ease-in-out infinite alternate;
+  animation: neonGreen 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes neonGreen {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #50FF00, 0 0 80px #50FF00, 0 0 100px #50FF00, 0 0 150px #50FF00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 35px #50FF00, 0 0 40px #50FF00, 0 0 50px #50FF00, 0 0 75px #50FF00;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.disabled:hover {
+  cursor: not-allowed;
 }

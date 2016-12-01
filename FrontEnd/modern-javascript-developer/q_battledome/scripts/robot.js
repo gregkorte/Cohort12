@@ -23,26 +23,31 @@ var Battledome = (function(battledome){
     this.stealth = 30;
     this.sentience = 50;
 
-    this.WeaponsAllowed = ['SentryWave', 'LockOut', 'AirLock', 'DeRez', 'AcidGas', 'LightDisc'];
+    this.WeaponsAllowed = ['SentryWave', 'PowerKill', 'AirLock', 'DeRez', 'AcidGas', 'LightDisc'];
     this.ModsAllowed = ['AccessControl', 'SurgeShield', 'AcquireFunction'];
   }
 
   battledome.BotLab.Amorphous.prototype = new Battledome.BotLab.Robot();
 
   battledome.BotLab.Amorphous.prototype.setWeapon = function(weaponType, weaponNum){
+    console.log(weaponType);
     let prop = `weapon${weaponNum}`;
     this[prop] = new Battledome.Armory[weaponType];
   }
 
   battledome.BotLab.Amorphous.prototype.setMod = function(modType, modNum){
-    let prop = `mod${modNum}`;
-    this[prop] = new Battledome.SciFacility[modType];
+    if (modNum === 0){
+      delete this.mod1;
+    } else {
+        let prop = `mod${modNum}`;
+        this[prop] = new Battledome.SciFacility[modType];
+    }
   }
 
 
   battledome.BotLab.Hal9000 = function(){
     this.name = 'Hal9000';
-    this.image = 'assets/images/bots/hal9000.jpg';
+    this.image = 'assets/images/bots/hal9000.png';
     this.ai += 30;
     this.stealth += 30;
     this.sentience += 50;
@@ -53,7 +58,7 @@ var Battledome = (function(battledome){
 
   battledome.BotLab.MCP = function(){
     this.name = 'Master Control Program';
-    this.image = 'assets/images/bots/Master_control_program.jpg';
+    this.image = 'assets/images/bots/mcp.png';
     this.ai += 20;
     this.stealth -= 5;
     this.sentience += 40;
@@ -64,7 +69,7 @@ var Battledome = (function(battledome){
 
   battledome.BotLab.RedQueen = function(){
     this.name = 'The Red Queen';
-    this.image = 'assets/images/bots/Red_Queen_AI.jpg';
+    this.image = 'assets/images/bots/redqueen.png';
     this.ai += 25;
     this.stealth += 15;
     this.sentience += 25;
@@ -97,6 +102,8 @@ var Battledome = (function(battledome){
   }
 
   battledome.BotLab.Amee = function(){
+    this.name = 'Amee';
+    this.image = 'assets/images/bots/amee.png'
     this.adaptablility = 50;
     this.mobility = 15;
     this.perception = '';
@@ -105,6 +112,8 @@ var Battledome = (function(battledome){
   battledome.BotLab.Amee.prototype = new Battledome.BotLab.Droid();
 
   battledome.BotLab.TX = function(){
+    this.name = 'TX';
+    this.image = 'assets/images/bots/tx.png'
     this.adaptability = 25;
     this.mobility = 15;
     this.bloodLust = '';
@@ -113,6 +122,8 @@ var Battledome = (function(battledome){
   battledome.BotLab.TX.prototype = new Battledome.BotLab.Droid();
 
   battledome.BotLab.NS5 = function(){
+    this.name = 'NS5';
+    this.image = 'assets/images/bots/ns5.png'
     this.adaptability = 40;
     this.mobility = 15;
     this.ferocity = '';
@@ -144,6 +155,8 @@ var Battledome = (function(battledome){
   }
 
   battledome.BotLab.Project2501 = function(){
+    this.name = 'Project 2501';
+    this.image = 'assets/images/bots/project2501-2.png'
     this.adaptablility = 50;
     this.mobility = 15;
     this.infiltration = '';
@@ -152,6 +165,8 @@ var Battledome = (function(battledome){
   battledome.BotLab.Project2501.prototype = new Battledome.BotLab.Cyborg();
 
   battledome.BotLab.Grevious = function(){
+    this.name = 'Greivous';
+    this.image = 'assets/images/bots/grievous.png'
     this.adaptability = 25;
     this.mobility = 15;
     this.darkSide = '';
@@ -160,6 +175,8 @@ var Battledome = (function(battledome){
   battledome.BotLab.Grevious.prototype = new Battledome.BotLab.Cyborg();
 
   battledome.BotLab.EVA = function(){
+    this.name = 'EVA';
+    this.image = 'assets/images/bots/eva.png'
     this.adaptability = 40;
     this.mobility = 15;
     this.berserk = '';
@@ -191,6 +208,8 @@ var Battledome = (function(battledome){
   }
 
   battledome.BotLab.Sentinel = function(){
+    this.name = 'Sentinel';
+    this.image = 'assets/images/bots/sentinel.png'
     this.adaptablility = 20;
     this.mobility = 15;
     this.pursuit = '';
@@ -199,6 +218,8 @@ var Battledome = (function(battledome){
   battledome.BotLab.Sentinel.prototype = new Battledome.BotLab.Swarm();
 
   battledome.BotLab.Gort = function(){
+    this.name = 'G.O.R.T.';
+    this.image = 'assets/images/bots/gort.png'
     this.adaptability = 25;
     this.mobility = 15;
     this.overwhelm = '';
@@ -207,6 +228,8 @@ var Battledome = (function(battledome){
   battledome.BotLab.Gort.prototype = new Battledome.BotLab.Swarm();
 
   battledome.BotLab.Microbot = function(){
+    this.name = 'Microbot';
+    this.image = 'assets/images/bots/microbots.png'
     this.adaptability = 40;
     this.mobility = 15;
     this. shapeshift = '';
