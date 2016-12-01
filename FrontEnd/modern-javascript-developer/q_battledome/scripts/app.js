@@ -109,21 +109,21 @@ function updateMods(bot, player, pNumber){
   }
   mods += `</div>`
   $(`.${pNumber}Stats`).append(mods);
-  loadSelectionEvents('mods', player);
+  loadSelectionEvents('mods', player, pNumber);
 }
 
 // Load selection events //
 
-function loadSelectionEvents(type, player) {
+function loadSelectionEvents(type, player, pNumber) {
   switch (type){
     case 'weapons':
       $(`.${player}weapon`).each(function(){
-        loadWeaponEvents(this, player, type);
+        loadWeaponEvents(this, player, type, pNumber);
       })
       break;
     case 'mods':
       $(`.${player}mod`).each(function(){
-        loadModEvents(this, player, type);
+        loadModEvents(this, player, type, pNumber);
       })
       break;
   }
@@ -131,75 +131,110 @@ function loadSelectionEvents(type, player) {
 
 // Load weapons selection events //
 
-function loadWeaponEvents(weapons, player, type){
-  $(weapons).click(function(){
+function loadWeaponEvents(weapons, player, type, pNumber){
+  $(weapons).on('click', function(){
     addSelection(weapons);
     let p = arena[player].bot;
     p.setWeapon($(weapons).prop('id'), modifyCount(`${type}`, player));
-    console.log(arena)
+    // console.log(arena)
   });
 }
 
 // Load mod selection events //
 
-function loadModEvents(mods, player, type){
-  $(mods).click(function(){
-    addSelection(mods);
+function loadModEvents(mods, player, type, pNumber){
+  console.log(pNumber)
+  $(mods).on('click', function(){
+    addSelection(mods, pNumber);
     let p = arena[player].bot;
-    p.setMod($(mods).prop('id'), modifyCount(`${type}`, player));
+    p.setMod($(mods).prop('id'), getModCount(pNumber));
+    disableSelections(player, pNumber);
     console.log(arena)
   });
 }
 
 // Define selected class //
 
-function addSelection(selector) {
+function addSelection(selector, pNumber) {
+  console.log(pNumber)
+  let pNum = `${pNumber}modCount`
   if ($(selector).hasClass('selected')){
-    console.log('Selected detected. Deselecting now.')
     $(selector).toggleClass('selected').html(`${$(selector).prop('id')}`);
+    pNumber === 'p1' ? p1modCount = 0 : p2modCount = 0;
   } else {
-    console.log('No selected class. Add checkmark.')
-    $(`<span class='check'>&#10004;</span>`).appendTo(selector).parent().toggleClass('selected')
+    $(`<span class='check'>&#10004;</span>`).appendTo(selector).parent().toggleClass('selected');
+    pNumber === 'p1' ? p1modCount = 1 : p2modCount = 1;
   }
+  console.log(p1modCount, p2modCount)
+}
+
+function disableSelections(player, pNum){
+  // switch (pNum){
+  //   case 'p1':
+    var modCount = (pNum === 'p1') ? p1modCount : p2modCount;
+      $(`.${player}mod`).each(function(){
+        if ((modCount === 1) && !$(this).hasClass('selected')){
+          $(this).off('click').addClass('disabled');
+        } else {
+          $(this).removeClass('disabled');
+        }
+      })
+      if (modCount === 0) {
+          loadSelectionEvents('mods', player, pNum)
+        }
+  //   break;
+  //   case 'p2':
+  //   console.log('Player 2 case.');
+  //   break;
+  // }
+
+}
+
+function getModCount(pNum){
+  return pNum === 'p1' ? p1modCount : p2modCount;
 }
 
 // Modify and monitor selection option count //
 
-function modifyCount(type, player) {
-  console.log('Modifying count...');
-  if (player === 'player1' && type === 'mods'){
-    console.log('Accessing player1 mods');
-    if (p1modCount === 1){
-      console.log('p1modCount = 1. Set to zero');
-      p1modCount = 0;
-      optionState(type, player);
-      return p1modCount;
-    } else {
-      console.log('Increment p1modCount.');
-      p1modCount++;
-      optionState(type, player);
-      return p1modCount;
-    }
-  } else if (player === 'player2' && type === 'mods'){
-    console.log('Accessing player2 mods')
-    if (p2modCount === 1){
-      console.log('p2modCount = 1. Set to zero');
-      p2modCount = 0;
-      optionState(type, player);
-      return p2modCount;
-    } else {
-      console.log('Increment p2modCount.');
-      p2modCount++;
-      optionState(type, player);
-      return p2modCount;
-    }
-  }
-}
+// function modifyCount(type, player) {
+//   if (player === 'player1' && type === 'mods'){
+//     if (p1modCount === 1){
+//       p1modCount = 0;
+//       optionState(type, player);
+//       return p1modCount;
+//     } else {
+//       p1modCount++;
+//       optionState(type, player);
+//       return p1modCount;
+//     }
+//   } else if (player === 'player2' && type === 'mods'){
+//     if (p2modCount === 1){
+//       p2modCount = 0;
+//       optionState(type, player);
+//       return p2modCount;
+//     } else {
+//       p2modCount++;
+//       optionState(type, player);
+//       return p2modCount;
+//     }
+//   }
+// }
 
-function optionState(type, player){
-  console.log('optionState running.')
-  console.log(`Selecting ${type} case.`)
-  switch (type) {
+// function optionState(type, player){
+//   console.log('The p1modCount = ', p1modCount)
+//   switch (type) {
+//     case 'mods':
+//       $(`.${player}mod`).each(function(){
+//         if ((p1modCount === 1 || p2modCount === 1) && !$(this).hasClass('selected')){
+//           $(this).off('click').addClass('disabled');
+//         } else if (p1modCount === 0 || p2modCount === 0) {
+//           $(this).removeClass('disabled').on('click');
+//           addSelection(this);
+//           let p = arena[player].bot;
+//           p.setMod($(this).prop('id'), modifyCount(`${type}`, player));
+//         }
+//       })
+//     break;
     // case 'weapons':
     //   $(`.${player}weapon`).each(function(){
     //     if ((p1weaponCount > 0 || p1weaponCount < 4) && !$(this).hasClass('selected')){
@@ -215,21 +250,8 @@ function optionState(type, player){
     //     }
     //   })
     // break;
-    case 'mods':
-      $(`.${player}mod`).each(function(){
-        console.log('p1modCount = ', p1modCount)
-        if ((p1modCount === 1 || p2modCount === 1) && !$(this).hasClass('selected')){
-          console.log('Selected class detected. Disabling unselected click events.')
-          console.log(this)
-          $(this).off('click').addClass('disabled');
-        } else if (p1modCount === 0 || p2modCount === 0) {
-          $(this).removeClass('disabled').on('click');
-          loadModEvents(this, player, type);
-        }
-      })
-    break;
-  }
-}
+//   }
+// }
 
 
 // {

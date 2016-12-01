@@ -150,6 +150,6 @@ span.abilityScore, .check {
   opacity: 0.5;
 }
 
-.disabled:hover {
+li.disabled:hover {
   cursor: not-allowed;
 }
