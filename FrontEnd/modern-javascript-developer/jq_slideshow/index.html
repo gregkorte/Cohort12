@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-<link rel='stylesheet' href='main.css'>
-  <meta charset='UTF-8'>
-  <title>jQuery Slideshow</title>
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel='stylesheet' href='css/main.css'>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>jQuery Slideshow</title>
 </head>
 <body>
 
-<div id='slideshow'></div>
+<div class="container">
+    <div class="row">
+        <span class="col-sm-1"><input type="button" value="<"></span>
+        <span id='slideshow' class="row col-sm-10">
+            <img class="col-sm-5">
+            <h3 class="col-sm-7"></h3>
+        </span>
+        <span class="col-sm-1"><input type="button" value=">"></span>
+    </div>
+</div>
 
-<script src=''></script>
-<script src='main.js'></script>
+<script src='dist/app.js'></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+{
+    "images": [
+        {
+            "id": 1,
+            "url": "./img/bb8.png",
+            "caption": "BB8 from The Force Awakens."
+        },
+        {
+            "id": 2,
+            "url": "./img/empire.png",
+            "caption": "The Empire insignia."
+        },
+        {
+            "id": 3,
+            "url": "./img/first-order.png",
+            "caption": "The First Order insignia."
+        },
+        {
+            "id": 4,
+            "url": "./img/rebel_phoenix_sm.png",
+            "caption": "The Phoenix Squadron insignia."
+        },
+        {
+            "id": 5,
+            "url": "./img/rebels.png",
+            "caption": "The Rebel Alliance insignia."
+        }
+    ]
+}
