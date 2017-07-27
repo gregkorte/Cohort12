@@ -1,0 +1,17 @@
+{
+  "name": "mushrooms",
+  "version": "0.1.0",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^0.4.0",
+    "grunt-browserify": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-nodeunit": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "jquery": "^3.2.1",
+    "jshint-stylish": "*",
+    "matchdep": "*"
+  }
+}
